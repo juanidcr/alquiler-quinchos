@@ -13,11 +13,8 @@
 
         <header class="hero">      
             <div class="navbar">  
-                <div><h2 class="nav__logo"><img src="imagen/logo.png" class="image"  width="80" height="80"
-                                                /></h2></div>  
-                <div class="nav-links">        
-
-
+                <div><h2 class="nav__logo"><img th:src="@{../img/logo.png}" class="image"  width="80" height="80"/></h2></div>  
+                <div class="nav-links">    
 
                     <div class="nav-header">
 
@@ -31,7 +28,7 @@
                             </label>
                         </div>  
                         <!-- Navbar items  -->       
-                        <a href="home.html">Inicio</a>
+                        <a th:href="@{/}">Inicio</a>
 
 
                         </header>   
@@ -49,8 +46,8 @@
                                     <h1>Registro.</h1>
                                 </div> 
 
-                                <form class="formulario">          
-                                    <div class="contenedor"  method="POST" th:action="@{/registroPropietario}">
+                                <form class="formulario" method="POST" th:action="@{/registroPropietario}">          
+                                    <div class="contenedor">
 
                                         <div class="input-contenedor">
                                             <i class="fas fa-user icon"></i>
@@ -101,13 +98,13 @@
                                         <!--Cargar foto-->
                                         <div class="file-select" id="src-file1">
                                             <i class="fa fa-file icon"></i> 
-                                            <input accept="image/*" type="file" multiple value="" required="true"   for="exampleFormControlSelect1" aria-label="Archivo"  name="archivo">                                             
+                                            <input accept="image/*" type="file" multiple name="archivo" value="" required="true"   for="exampleFormControlSelect1" aria-label="Archivo">                                             
                                         </div><br><br>                   
 
                                         <div class="input-contenedor">
-                                            <input class="button" type="button" onclick="" value="Registrarse"> 
+                                            <input class="button" type="submit" value="Registrarse"> 
                                         </div> 
-                                        <p>¿Ya tenés cuenta? <a target="_blank" href="iniciarSesionPropietario.html">Iniciar sesión</a></p>              
+                                        <p>¿Ya tenés cuenta? <a target="_blank" th:href="@{/login}">Iniciar sesión</a></p>              
 
 
                                 </form>  

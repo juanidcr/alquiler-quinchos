@@ -5,8 +5,11 @@
 package com.eggprojectofinalintegrador.alquileresdequinchosparafiestas.controladores;
 
 import com.eggprojectofinalintegrador.alquileresdequinchosparafiestas.Servicios.UsuarioServicio;
+import com.eggprojectofinalintegrador.alquileresdequinchosparafiestas.entidades.Usuario;
 import com.eggprojectofinalintegrador.alquileresdequinchosparafiestas.excepciones.MiException;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +34,8 @@ public class PortalControlador {
     @GetMapping("/")
     public String index(ModelMap modelo){
                         
-        return "index.html";
+        //return "index.html";
+        return "home.html";
         
     }
 
@@ -49,7 +53,8 @@ public class PortalControlador {
             usuarioServicio.registrar(archivo, apellido, nombre, dni, email, password, passwordR);
             modelo.put("exito","Usuario registrado correctamente");
             
-            return "index.html";
+            //return "index.html";
+            return "home.html";
             
         } catch (MiException ex) {
             modelo.put("error", ex.getMessage());
@@ -71,8 +76,29 @@ public class PortalControlador {
             modelo.put("error", "Usuario o Contraseña invalidos!");
         }
         
-        return "login.html";
+        //return "login.html";
+        return "iniciarSesion.html";
         
-    }       
+    }  
+
+    @PreAuthorize("hasAnyRole('ROLE_CLIENTE','ROLE_ADMIN','ROLE_PROPIETARIO')")
+    @GetMapping("/inicio")
+    public String inicio(HttpSession session, ModelMap modelo){
+        
+        Usuario logeado=(Usuario) session.getAttribute("usuariosession");
+        
+        if(logeado.getRol().toString().equals("ADMIN")){
+            
+            return "redirect:/admin/dashboard";
+            
+        }
+        
+        //List<Noticia> noticias=noticiaServicio.listarNoticias(null);
+        
+        //modelo.addAttribute("noticias", noticias);
+        
+        return "inicio.html";
+        
+    }     
 
 }

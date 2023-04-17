@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,7 +13,7 @@
 
     <header class="hero">      
       <div class="navbar">  
-        <div><h2 class="nav__logo"><img src="imagen/logo.png" class="image"  width="80" height="80"
+        <div><h2 class="nav__logo"><img th:src="@{../img/logo.png}" class="image"  width="80" height="80"
           /></h2></div>  
         <div class="nav-links">        
           
@@ -49,24 +49,32 @@
                 <h1>Iniciar <span>Sesión</span></h1>
             </div> 
 
-            <form class="formulario">          
-                <div class="contenedor"  method="POST" action="">   
+            <form class="formulario" method="POST" th:action="@{/logincheck}">          
+                <div class="contenedor">   
                                    
+                    <div th:if="${error != null}">
+                        <h5>ERROR!</h5>
+                        <p th:text="${error}"></p>
+                    </div>
+                    <div th:if="${exito != null}">
+                        <h5>EXITO!</h5>
+                        <p th:text="${exito}"></p>
+                    </div>
                     
                     <div class="input-contenedor">
                     <i class="fas fa-envelope icon"></i>
-                    <input type="_email" id="_email" name="_email" value="" placeholder="Email:" required="true">             
+                    <input type="_email" id="_email" name="email" placeholder="Email:" required="true">             
                     </div>
                     <br><br>
                     
                     <div class="input-contenedor">
                      <i class="fas fa-key icon"></i>
-                     <input type="password" id="_password" name="_password" value="" placeholder="Contraseña:" required="true">             
+                     <input type="password" id="_password" name="password" placeholder="Contraseña:" required="true">             
                     </div>
                     <br><br>                    
                      
                      <div class="input-contenedor">
-                         <input class="button" type="button" onclick="" value="Iniciar Sesión"> 
+                         <input class="button" type="submit" value="Iniciar Sesión">                          
                      </div>                    
                                                    
                </form>  

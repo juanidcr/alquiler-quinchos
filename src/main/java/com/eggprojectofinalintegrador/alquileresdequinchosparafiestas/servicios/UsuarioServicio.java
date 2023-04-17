@@ -33,6 +33,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @Service
 public class UsuarioServicio implements UserDetailsService {
+    
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
     
@@ -82,10 +83,10 @@ public class UsuarioServicio implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); 
+        //To change body of generated methods, choose Tools | Templates.
         Usuario usuario=usuarioRepositorio.buscarPorEmail(email);
-        //System.out.println("email:"+email);
+        
         if(usuario!=null){
             
             List<GrantedAuthority> permisos=new ArrayList<>();
@@ -107,7 +108,8 @@ public class UsuarioServicio implements UserDetailsService {
         }else{
             return null;
         }
-          
     }
+
+    
 
 }
