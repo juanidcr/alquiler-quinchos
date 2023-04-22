@@ -1,0 +1,674 @@
+/*Estilo contenedor formulario*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/***Body***/
+body {
+   margin: 0;
+  background-repeat: no-repeat;
+}
+
+
+
+.titulo h1 {
+  text-align: center;
+  color: #ff6529; 
+  margin-top: 20%;   
+  font-size: 100px;
+  font-family: 'Lora', serif;
+}
+
+span {
+    margin-top: 20%;  
+    font-size: 100px;
+    font-family: 'Lora', serif;
+    color:#ff6529;
+}
+
+/*Pantalla dividida*/
+.izquierda {   
+    background:  #cecece;
+    opacity: 1;
+    background-image: url("../imagen/textura1.png");
+    background-repeat: no-repeat;
+    height: 160vh;
+    width: 50%;
+    margin: auto;
+    
+  }
+  
+  .derecha {  
+    background: #dff4fd;
+    background-repeat: no-repeat;
+    margin-top: 0%;
+    height: 160vh;
+    width: 50%;
+  }
+
+#pantalla-dividida {  
+  display: flex;
+  background: #ede5da;
+}
+
+
+
+ /*MENU NAV*/
+ 
+ /*MENU NAV*/
+ 
+.hero {
+    
+  background: rgba(0, 0, 0, 0.575);  
+  color: #fff;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas:
+    "nav"
+    "content";   
+  width: 100%;
+  
+  position: fixed;
+z-index: 999;
+}
+
+.nav__logo {
+
+  font-size: 2rem;
+  font-weight: 300px;
+  font-family: "Lora", sans-serif;
+}
+
+.navbar {    
+  grid-area: nav;
+  display: grid;
+  justify-content: space-between;
+  grid-auto-flow: column;
+  gap: 1em;
+  align-items: center;
+  padding: 5px 30px;
+  
+}
+
+.navbar .nav-header {
+  margin: auto;
+  display: inline;
+}
+.navbar .nav-header .nav-logo {
+  display: inline-block;
+  margin-top: -7px;
+}
+.navbar .nav-links {
+  display: inline;
+  float: right;
+  font-size: 5px;
+}
+
+/*Tipografia menu*/
+.navbar .nav-links a {
+  font-family: "Lato", sans-serif;
+  padding: 20px 12px;
+  text-decoration: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+}
+/* Hover effects */
+.navbar .nav-links a:hover {
+  background-color: #fa9e69;
+  border-radius: 6px;
+}
+
+/* responsive navbar toggle button */
+.navbar #nav-check,
+.navbar .nav-btn {
+  display: none;
+}
+
+@media (max-width: 700px) {
+
+  .navbar{
+    background-color: #94999c;
+  }
+  .nav__logo{
+    z-index: 2000;
+  }
+  .navbar #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    
+  }
+  .navbar .nav-btn {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    
+  }
+  /*Icono Hamburguesa*/
+  .navbar .nav-btn label {
+    display: inline-block;  
+    width: 80px;
+    height: 70px;
+    padding: 25px;
+  }
+
+  /*Color lineas hamburguesa*/
+ 
+  .navbar .nav-btn label:hover,
+  .navbar #nav-check:checked ~ .nav-btn label {
+    transition: all 0.5s ease;
+  }
+  /* Color fondo Menu Hamburguesa*/
+  .navbar .nav-links {
+    position: absolute;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #94999c;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 70px;
+    right: 0px;
+    border-radius: 6px;
+  }
+  .navbar .nav-links a {
+    display: block;
+  }
+
+  /* when nav toggle button not checked */
+  .navbar #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+
+  /* when nav toggle button is checked */
+  .navbar #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+
+  .navbar .nav-links .loginBtn {
+    padding: 10px 40px;
+    margin: 20px;
+    font-size: 14px;
+    font-family: "Urbanist", sans-serif;
+    color: rgb(255, 255, 255);
+  }
+  /* Responsive dropdown code */
+  .navbar .nav-links .dropdown,
+  .navbar .nav-links .dropdown2 {
+    float: none;
+    width: 100%;
+  }
+  .navbar .nav-links .drop-content,
+  .navbar .nav-links .drop-content2 {
+    position: relative;
+    background-color: #858b8f;
+    top: 0px;
+    left: 0px;
+  }
+  /* Text color sub menu Hamburguesa */
+  .navbar .nav-links .drop-content a {
+    color: rgb(255, 255, 255);
+  }
+}
+
+/* Dropdown menu CSS code */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.drop-content,
+.drop-content2 {
+  display: none;
+  position: absolute;
+  background-color: #9ea3a7;
+  border-radius: 6px;
+  min-width: 120px;
+  font-size: 16px;
+  font-family: "Urbanist", sans-serif;
+  top: 34px;
+}
+/* on hover show dropdown */
+.dropdown:hover .drop-content,
+.dropdown2:hover .drop-content2 {
+  display: block;
+}
+/* Color lineas links */
+.drop-content a {
+  padding: 12px 10px;
+  border-bottom: 1px solid #757c81;
+  display: block;
+  transition: all 0.5s ease !important;
+}
+.dropBtn .drop-content a:hover {
+  background-color: rgb(250, 158, 102) ;
+}
+.dropdown:hover .dropBtn,
+.dropdown2:hover .dropBtn2 {
+  background-color: rgb(250, 158, 102) ;
+}
+.dropdown2 .drop-content2 {
+  position: absolute;
+  left: 120px;
+  top: 126px;
+}
+.dropBtn2 i {
+  margin-left: 15px;
+}
+
+/*Slider Imagenes home*/
+.container{
+  margin-top: 400px;
+  justify-content: center;
+}
+.slider-wrapper{
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+ }
+
+ .slider{
+  display: flex;
+  aspect-ratio: 16 / 9;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 .25rem .5rem #21212126;
+ }
+
+ .slider img{
+  width: 100%;
+  height: 100%;
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+ }
+
+ .slider-nav{
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+ }
+
+ .slider-nav a{
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: .75;
+  transition: opacity ease 250ms;
+ }
+
+ .slider-nav a:hover{
+  opacity: 1;
+ }
+
+/*.slider-frame{
+  width: 700px;
+  height: auto;
+  margin: 350px auto 0;
+  overflow: hidden;
+
+  animation:  slide 16s infinite alternate ease-in-out;
+}
+
+.slider-frame ul{
+  display: flex;
+  padding: 0;
+  width: 400%;
+}
+
+.slider-frame li{
+  width: 100%;
+  list-style: none;
+  
+}
+
+.slider-frame img{
+  width: 100%;
+}
+
+@keyframes slide{
+  0% {margin-left: 0%;}
+  20% {margin-left: 0%;}
+
+  25% {margin-left: -100%;}
+  45% {margin-left: -100%;}
+
+  50% {margin-left: -200%;}
+  70% {margin-left: -200%;}
+
+  75% {margin-left: -300%;}
+  95% {margin-left: -300%;}
+}
+
+/*body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+img{
+  max-width: 100%;
+}
+
+.container-all{
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.slide{
+  display: flex;
+  transform: translate3d(0,0,0,);
+  transition: all 600ms;
+  animation-name: autoplay;
+  animation-duration:  6.5;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.item-slide{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-width: 100%;
+}
+
+.pagination{
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.pagination-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 10px;
+  text-align: center;
+  transition: all 300ms;
+}
+
+.pagination-item:hover{
+  transform: scale(2);
+}
+
+.pagination-item img{
+  display: inline-block;
+  max-width: none;
+  height: 100%;
+  transform: scale(1);
+  opacity: 0;
+  transform: all 300ms;
+}
+
+.pagination-item:hover img{
+  opacity: 1;
+  transform: scale(1);
+}
+
+input[id="1"]:checked ~ .slide{
+  animation: none;
+  transform: translate3d(0, 0, 0);
+
+}
+
+input[id="1"]:checked ~ .pagination .pagination-item[form="1"]{
+  background: #fff;
+}
+
+input[id="2"]:checked ~ .slide{
+  animation: none;
+  transform: translate3d(calc(-100% *1)0, 0, 0);
+
+}
+
+input[id="2"]:checked ~ .pagination .pagination-item[form="2"]{
+  background: #fff;
+}
+
+
+input[id="3"]:checked ~ .slide{
+  animation: none;
+  transform: translate3d(calc(-100% *2)0, 0, 0);
+
+}
+
+input[id="3"]:checked ~ .pagination .pagination-item[form="3"]{
+  background: #fff;
+}
+
+@keyframes autoplay{
+  33%{
+    transform: translate(calc(-100% *0)0, 0 ,0);
+  }
+
+  66%{
+    transform: translate(calc(-100% *1)0, 0 ,0);
+  }
+
+  100%{
+    transform: translate(calc(-100% *2)0, 0 ,0);
+  }
+
+}*/
+
+
+
+
+
+
+/*Estilo formularios*/
+.contenedor {
+  margin: auto;
+  width: 85%;
+  padding: 15px;
+  padding-top: 40px;
+}
+.formulario {
+    
+  font-family: 'Lora', serif;
+  background: rgba(255, 255, 255, 0.5) ;
+  margin-top: 150px;
+  padding: 3px;
+}
+
+
+input[type="file"],
+input[type="text"],
+input[type="_email"],
+input[type="_number"],
+input[type="password"] {
+  font-size: 17px; 
+  padding: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1) ;
+}
+
+input[type="checkbox" i] {
+  margin-left: 50%;
+}
+
+textarea {
+  height: 80px;
+  width: 100%;
+  resize: none;
+  border-color: #fff;
+}
+
+.input-contenedor {
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid #aaa;
+}
+.icon {
+  min-width: 50px;
+  text-align: center;
+  color: #999;
+}
+.button {
+  border: none;
+  width: 100%;
+  color: white;
+  font-size: 18px;
+  background: #46a2fd;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.button:hover {
+  background: rgb(111, 188, 164);
+}
+p {
+  margin: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+.link {
+  text-decoration: none;
+  color: #1a2537;
+  font-weight: 600;
+}
+.link:hover {
+  color: rgb(95, 122, 160);
+}
+
+/*Codigo boton file*/
+
+.file-select {
+  position: relative;
+  display: inline-block;
+}
+
+.file-select::before {
+  background-color: #3a96f1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  content: "Seleccionar"; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.file-select input[type="file"] {
+  opacity: 0;
+
+  height: 32px;
+  display: inline-block;
+  border-radius: 12px;
+}
+
+#src-file1::before {
+  border-radius: 12px;
+  content: "Subir tu cv";
+}
+
+@media (min-width: 768px) {
+  .formulario {
+    opacity: 1;
+    margin: auto;
+    width: 400px;
+    margin-top: 70px;
+    border-radius: 12px;
+  }
+}
+
+
+/*Seleccionar opcion*/
+
+.content-input input,
+.content-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Eliminamos la fecha que por defecto aparece en el desplegable */
+.content-select select::-ms-expand {
+  display: none;
+}
+.content-select {
+  max-width: 250px;
+  position: relative;
+}
+
+.content-select select {
+  display: inline-block;
+  width: 120%;
+  cursor: pointer;
+  padding: 7px 10px;
+  height: 42px;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #7b7b7b;
+  font-size: 1em;
+
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.content-select select:hover {
+  background: #b1e8cd;
+}
+
+/* 
+Creamos la fecha que aparece a la izquierda del select.
+Realmente este elemento es un cuadrado que sólo tienen
+dos bordes con color y que giramos con transform: rotate(-45deg);
+*/
+.content-select i {
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 13px);
+  width: 16px;
+  height: 16px;
+  display: block;
+  border-left: 4px solid #2a80c1;
+  border-bottom: 4px solid #2a80c1;
+  transform: rotate(-45deg); /* Giramos el cuadrado */
+  transition: all 0.25s ease;
+}
+
+.content-select:hover i {
+  margin-top: 3px;
+}
+
+
