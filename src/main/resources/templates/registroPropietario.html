@@ -30,9 +30,7 @@
                         <!-- Navbar items  -->       
                         <a th:href="@{/}">Inicio</a>
 
-
                         </header>   
-
 
                         <section id="pantalla-dividida">
 
@@ -46,12 +44,12 @@
                                     <h1>Registro.</h1>
                                 </div> 
 
-                                <form class="formulario" method="POST" th:action="@{/registroPropietario}">          
+                                <form class="formulario" method="POST" th:action="@{/registroPropietario}" enctype="multipart/form-data">          
                                     <div class="contenedor">
 
                                         <div class="input-contenedor">
                                             <i class="fas fa-user icon"></i>
-                                            <input type="text" id="_nombre" name="apellido" th:value="${apellido}" placeholder="Apellido:" required="true">              
+                                            <input type="text" id="_apellido" name="apellido" th:value="${apellido}" placeholder="Apellido:" required="true">              
                                         </div>
                                         <br><br>
 
@@ -72,6 +70,18 @@
                                             <input type="_email" id="_email" name="email" th:value="${email}" placeholder="Email:" required="true">             
                                         </div>
                                         <br><br>
+                                        
+                                        <div class="input-contenedor">
+                                            <i class="fas fa-envelope icon"></i>
+                                            <input type="_telefono" id="_telefono" name="telefono" th:value="${telefono}" placeholder="Telefono:" required="false">             
+                                        </div>
+                                        <br><br>
+                                        
+                                        <div class="input-contenedor">
+                                            <i class="fas fa-envelope icon"></i>
+                                            <input type="text" id="_descripcion" name="descripcion" th:value="${descripcion}" placeholder="Descripcion:" required="false">             
+                                        </div>
+                                        <br><br>
 
                                         <div class="input-contenedor">
                                             <i class="fas fa-key icon"></i>
@@ -83,30 +93,19 @@
                                             <i class="fas fa-key icon"></i>
                                             <input type="password" id="_Rpassword" name="passwordR" value="" placeholder="Repetir Contraseña:" required="true">
                                         </div>
-                                        <br><br>
-
-                                        <!--Eleccion cliente/Propietario
-                                        <div class="input-contenedor">
-                                         <input type="text"  for="exampleFormControlSelect1" placeholder="Selecciona que perfil seras:" name="profesion">                            
-                                               <select class="formulario__login" id="exampleFormControlSelect1">
-                                                 <option>Cliente</option>
-                                                 <option>Propietario</option>                                                         
-                                               </select>
-                                             </div>
-                                         </div>-->    
-
+                                        <br><br>                                          
+                                         
                                         <!--Cargar foto-->
                                         <div class="file-select" id="src-file1">
                                             <i class="fa fa-file icon"></i> 
-                                            <input accept="image/*" type="file" multiple name="archivo" value="" required="true"   for="exampleFormControlSelect1" aria-label="Archivo">                                             
-                                        </div><br><br>                   
+                                            <input accept="img/*" type="file" name="archivo" multiple value="" required="true"   for="exampleFormControlSelect1" aria-label="Archivo">                                             
+                                       </div><br><br>  
 
                                         <div class="input-contenedor">
                                             <input class="button" type="submit" value="Registrarse"> 
                                         </div> 
                                         <p>¿Ya tenés cuenta? <a target="_blank" th:href="@{/login}">Iniciar sesión</a></p>              
-
-
+                                    </div>
                                 </form>  
                             </div>
                         </section>      

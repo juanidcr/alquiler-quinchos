@@ -40,9 +40,10 @@ public class UsuarioServicio implements UserDetailsService {
     @Autowired
     private ImagenServicio imagenServicio;
 
-    @Transactional
-    public void registrar(MultipartFile archivo, String apellido, String nombre, String dni, String email, String password, String passwordR) throws MiException{
-        validar(apellido, nombre, email, password, passwordR);
+    @Transactional 
+    public void registrarPropietario(MultipartFile archivo, String apellido, String nombre, String dni, String email, String telefono, String descripcion, String password, String passwordR) throws MiException{
+        System.out.println(archivo+" "+apellido);        
+        validar(apellido, nombre, email, telefono, password, passwordR);
         
         Usuario usuario=new Usuario();
         
@@ -50,6 +51,7 @@ public class UsuarioServicio implements UserDetailsService {
         usuario.setNombre(nombre);
         usuario.setDni(dni);
         usuario.setEmail(email);
+        usuario.setTelefono(telefono);
         
         usuario.setPassword(new BCryptPasswordEncoder().encode(password));
         
@@ -58,11 +60,15 @@ public class UsuarioServicio implements UserDetailsService {
         Imagen imagen=imagenServicio.guardar(archivo);
         
         usuario.setImagen(imagen);
+
+        usuario.setAlta(true);
+
+        usuario.setDescripcion(descripcion);
         
         usuarioRepositorio.save(usuario);
     }
 
-    private void validar(String apellido, String nombre, String email, String password, String passwordR) throws MiException{
+    private void validar(String apellido, String nombre, String email, String telefono, String password, String passwordR) throws MiException{
         if(apellido.isEmpty() || apellido==null){
             throw new MiException("El nombre no puede ser nulo o estar vacio");
         }        
@@ -72,10 +78,12 @@ public class UsuarioServicio implements UserDetailsService {
         if(email.isEmpty() || email==null){
             throw new MiException("El email no puede ser nulo o estar vacio");
         }
+        if(telefono.isEmpty() || telefono==null){
+            throw new MiException("El telefono no puede ser nulo o estar vacio");
+        }
         if(password.isEmpty() || password==null || password.length()<=5){
             throw new MiException("La contraseña no puede ser nulo o estar vacio");
-        }
-        
+        }       
         if(!password.equals(passwordR)){
             throw new MiException("Las contraseñas no son iguales");
         }

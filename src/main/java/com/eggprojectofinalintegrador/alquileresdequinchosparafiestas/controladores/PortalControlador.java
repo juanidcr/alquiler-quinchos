@@ -39,7 +39,7 @@ public class PortalControlador {
         
     }
 
-    @GetMapping("/registrar")
+    @GetMapping("/registrarPropietario")
     public String registrar(){
         
         return "registroPropietario.html";
@@ -47,10 +47,10 @@ public class PortalControlador {
     }
 
     @PostMapping("/registroPropietario")
-    public String registro(@RequestParam String apellido, @RequestParam String nombre, @RequestParam String dni, @RequestParam String email, @RequestParam String password, String passwordR, ModelMap modelo, MultipartFile archivo){
+    public String registroPropietario(MultipartFile archivo, @RequestParam String apellido, @RequestParam String nombre, @RequestParam String dni, @RequestParam String email, @RequestParam String telefono, @RequestParam String descripcion, @RequestParam String password, String passwordR, ModelMap modelo){
         
         try {
-            usuarioServicio.registrar(archivo, apellido, nombre, dni, email, password, passwordR);
+            usuarioServicio.registrarPropietario(archivo, apellido, nombre, dni, email, telefono, descripcion, password, passwordR);
             modelo.put("exito","Usuario registrado correctamente");
             
             //return "index.html";
@@ -58,10 +58,14 @@ public class PortalControlador {
             
         } catch (MiException ex) {
             modelo.put("error", ex.getMessage());
+            
             modelo.put("apellido", apellido);
             modelo.put("nombre", nombre);
             modelo.put("dni", dni);
             modelo.put("email", email);
+            modelo.put("telefono", telefono);
+            modelo.put("descripcion", descripcion);
+            
            
             return "registroPropietario.html";
             
@@ -69,7 +73,7 @@ public class PortalControlador {
         
     }
 
-    @GetMapping("/login")//@RequestParam(required = false) String error, ModelMap modelo
+    @GetMapping("/login")
     public String login(@RequestParam(required = false) String error, ModelMap modelo){
         
         if(error!=null){
@@ -91,11 +95,11 @@ public class PortalControlador {
             
             return "redirect:/admin/dashboard";
             
+        }else if(logeado.getRol().toString().equals("PROPIETARIO")){
+
+            return "redirect:/adminPropietario/dashboard";
+
         }
-        
-        //List<Noticia> noticias=noticiaServicio.listarNoticias(null);
-        
-        //modelo.addAttribute("noticias", noticias);
         
         return "inicio.html";
         

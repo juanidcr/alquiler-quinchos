@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
-        <title>prueba</title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
-        <link rel="stylesheet" href="./css/estilos.css" />
-    </head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="/fragments/head :: head" </head>
 
     <body class="textura">  
+        <nav sec:authorize="hasRole('PROPIETARIO')" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar w/ text</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    Navbar text with an inline element
+                </span>
+            </div>
+        </nav>
+        <!<!-- comment -->
         <header class="hero">      
             <div class="navbar">  
                 <div><h2 class="nav__logo"><img th:src="@{../img/logo.png}" class="image"  width="30%" height="30%"/></h2></div>  
-                <div class="nav-links">        
-
-
-
-                    <div class="nav-header">
-
-                        <!-- responsive navbar toggle button
-                         <input type="checkbox" id="nav-check" />
-                        <div class="nav-btn">
-                          <label for="nav-check">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                          </label>
-                        </div>   -->
-                        <!-- Navbar items      
-                        <a href="#">Modo Invitado</a>
-                          <a href="iniciarSesion.html">Iniciar Sesión</a>            
-                         <div class="dropdown">
-                            <a id="iniciarSesion" class="dropBtn" href="#">Registro
-                              <i class="fas fa-angle-down"></i>
-                            </a>                  
-                             <div class="drop-content">
-                              <a href="registroPropietario.html">Propietario</a>-->   
+                <div class="nav-links">   
+                    <div class="nav-header">                         
                         <a href="carritoAlquiler.html">Omitir  X</a>
                     </div>
                 </div>                
@@ -63,21 +57,18 @@
                         <p> disfruta con tus amigos. </p>              
                     </div>            
                 </div> 
-                <!--<div class="content">              
-                  <a href="#">EMPEZAR</a>
-                </div>-->           
+
             </li>
 
             <li>
+
                 <div id="wrap2" class="wrap">
                     <div class="wrap-texto">
                         <h1>Celebra tus fiestas</h1>
                         <p> Alquila un quincho. </p>              
                     </div>            
                 </div> 
-                <!--<div class="content">              
-                  <a href="#">EMPEZAR</a>
-                </div>-->         
+
             </li>
 
             <li>         
@@ -87,9 +78,7 @@
                         <p> Ponlo en alquiler. </p>              
                     </div>
                 </div>
-                <!--<div class="content">              
-                  <a href="#">EMPEZAR</a>
-                </div>-->             
+
             </li>
 
         </ul>                  
@@ -112,12 +101,10 @@
     </div>
 
     <div class="izq">
-        <a id="button2" class="button" th:href="@{/registrar}">Regístrate como Propietario.</a> 
-    </div>                                
-
+        <a id="button2" class="button" th:href="@{/registrarPropietario}">Regístrate como Propietario.</a> 
+    </div>                              
 
 </section> 
-
 
 <footer class="pie-pagina" id="contacto">
     <div class="grupo-1">          
@@ -132,8 +119,7 @@
         </div>    
     </div>
     <div class="grupo-2">
-        <small
-            >&copy; 2023 <b>Grupo 4 curso EGG</b> - Informacion legal | Politica de privacidad.</small>
+        <small>&copy; 2023 <b>Grupo 4 curso EGG</b> - Informacion legal | Politica de privacidad.</small>
     </div>
 </footer>       
 

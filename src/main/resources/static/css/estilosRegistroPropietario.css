@@ -231,7 +231,7 @@ z-index: 999;
 .izquierda {   
   background:  #cecece;
   opacity: 1;
-  background-image: url("../imagen/textura1.png");
+  background-image: url("../img/textura1.png");
   background-repeat: no-repeat;
   height: 160vh;
   width: 50%;
@@ -274,6 +274,7 @@ z-index: 999;
 input[type="file"],
 input[type="text"],
 input[type="_email"],
+input[type="_telefono"],
 input[type="_number"],
 input[type="password"] {
   font-size: 17px; 

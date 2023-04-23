@@ -27,12 +27,16 @@ public class ImagenServicio {
                 
                 imagen.setMime(archivo.getContentType());
                 imagen.setNombre(archivo.getName());
-                imagen.setContendido(archivo.getBytes());                
+                imagen.setContendido(archivo.getBytes()); 
+
+                System.out.println("archivo no null");               
                 
                 return imagenRepositorio.save(imagen);
             }catch (Exception ex) {
                 System.err.println(">>"+ex.getMessage());
             }
+        }else{
+            System.out.println("archivo null");
         }
         
         return null;
