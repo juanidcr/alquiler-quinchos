@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+        <title>Registrarse Propietario</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+        <link rel="stylesheet" href="css/estilosRegistroPropietario.css" />
+    </head>
+
+    <body class="">   
+
+        <header class="hero">      
+            <div class="navbar">  
+                <div><h2 class="nav__logo"><img th:src="@{../img/logo.png}" class="image"  width="80" height="80"/></h2></div>  
+                <div class="nav-links">    
+
+                    <div class="nav-header">
+
+                        <!-- responsive navbar toggle button -->
+                        <input type="checkbox" id="nav-check" />
+                        <div class="nav-btn">
+                            <label for="nav-check">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </label>
+                        </div>  
+                        <!-- Navbar items  -->       
+                        <a th:href="@{/}">Inicio</a>
+
+                        </header>   
+
+                        <section id="pantalla-dividida">
+
+                            <div class="izquierda" >       
+
+                            </div> 
+
+                            <div class="derecha">
+
+                                <div class="titulo">
+                                    <h1>Registro.</h1>
+                                </div> 
+
+                                <form class="formulario" method="POST" th:action="@{/registroPropietario}" enctype="multipart/form-data">          
+                                    <div class="contenedor">
+
+                                        <div class="input-contenedor">
+                                            <i class="fas fa-user icon"></i>
+                                            <input type="text" id="_apellido" name="apellido" th:value="${apellido}" placeholder="Apellido:" required="true">              
+                                        </div>
+                                        <br><br>
+
+                                        <div class="input-contenedor">
+                                            <i class="fas fa-user icon"></i>
+                                            <input type="text" id="_nombre" name="nombre" th:value="${nombre}" placeholder="Nombre:" required="true">              
+                                        </div>
+                                        <br><br>
+
+                                        <div class="input-contenedor">
+                                            <i class="fa fa-address-card icon"></i>
+                                            <input type="_number" id="_dni" name="dni" th:value="${dni}" placeholder="Ingresa DNI:" required="true">              
+                                        </div>
+                                        <br><br>                 
+
+                                        <div class="input-contenedor">
+                                            <i class="fas fa-envelope icon"></i>
+                                            <input type="_email" id="_email" name="email" th:value="${email}" placeholder="Email:" required="true">             
+                                        </div>
+                                        <br><br>
+                                        
+                                        <div class="input-contenedor">
+                                            <i class="fas fa-envelope icon"></i>
+                                            <input type="_telefono" id="_telefono" name="telefono" th:value="${telefono}" placeholder="Telefono:" required="false">             
+                                        </div>
+                                        <br><br>
+                                        
+                                        <div class="input-contenedor">
+                                            <i class="fas fa-envelope icon"></i>
+                                            <input type="text" id="_descripcion" name="descripcion" th:value="${descripcion}" placeholder="Descripcion:" required="false">             
+                                        </div>
+                                        <br><br>
+
+                                        <div class="input-contenedor">
+                                            <i class="fas fa-key icon"></i>
+                                            <input type="password" id="_password" name="password" value="" placeholder="Contraseña:" required="true">             
+                                        </div>
+                                        <br><br>
+
+                                        <div class="input-contenedor">
+                                            <i class="fas fa-key icon"></i>
+                                            <input type="password" id="_Rpassword" name="passwordR" value="" placeholder="Repetir Contraseña:" required="true">
+                                        </div>
+                                        <br><br>                                          
+                                         
+                                        <!--Cargar foto-->
+                                        <div class="file-select" id="src-file1">
+                                            <i class="fa fa-file icon"></i> 
+                                            <input accept="img/*" type="file" name="archivo" multiple value="" required="true"   for="exampleFormControlSelect1" aria-label="Archivo">                                             
+                                       </div><br><br>  
+
+                                        <div class="input-contenedor">
+                                            <input class="button" type="submit" value="Registrarse"> 
+                                        </div> 
+                                        <p>¿Ya tenés cuenta? <a target="_blank" th:href="@{/login}">Iniciar sesión</a></p>              
+                                    </div>
+                                </form>  
+                            </div>
+                        </section>      
+
+
+                        </body>
+                        </html>

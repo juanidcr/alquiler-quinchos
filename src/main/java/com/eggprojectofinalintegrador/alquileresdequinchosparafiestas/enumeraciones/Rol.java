@@ -9,8 +9,7 @@ package com.eggprojectofinalintegrador.alquileresdequinchosparafiestas.enumeraci
  *
  * @author Leo
  */
-public enum Rol {
-    USER,
+public enum Rol {    
     ADMIN,
     CLIENTE,
     PROPIETARIO;
