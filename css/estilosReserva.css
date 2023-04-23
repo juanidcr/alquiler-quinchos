@@ -1,0 +1,1552 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap');
+
+*{box-sizing: border-box;
+}
+
+  .color{
+  width: 100%;
+  border: 1;
+  color:#63a2bd;
+  background: rgb(239, 239, 239);
+  background-image: url("../imagen/textura.png"); 
+ 
+  }
+
+    
+
+body{
+ 
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #6a7a8b;
+  background-image: url("../imagen/textura1.png");
+ 
+}
+
+
+nav { 
+  margin: 27px auto 0;
+	margin: auto;
+justify-content: center;
+	width: 100%;
+	height: 40px;
+	/*background-color: #34495e;*/
+border-radius: 7px;
+}
+
+nav a{
+  color: #fff;
+  padding: 30px;
+}
+
+span {
+    color: #000000;
+}
+
+/* Submenu*/
+
+.submenu{
+	position: absolute;
+	background: #333333;
+	width: 120%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+}
+
+.submenu li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	font-family: 'Open sans';
+	text-decoration: none;
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+
+
+h1, h2{
+    color: #63a2bd;
+    
+}
+
+
+ .titulo_color {
+   
+    font-family: "Lora",sans-serif;
+       
+ }
+
+ body{
+  
+
+ width: 100%;
+ }
+/*MENU NAV*/
+ 
+.hero {
+  
+    margin: 0;
+    background: rgba(0, 0, 0, 0.575);  
+    color: #fff;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas:
+      "nav"
+      "content";   
+    width: 100%;    
+    position: fixed;
+  z-index: 999;
+  }
+  
+  .nav__logo {
+  
+    font-size: 2rem;
+    font-weight: 300px;
+    font-family: "Lora", sans-serif;
+  }
+  
+  .navbar {    
+    grid-area: nav;
+    display: grid;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    gap: 1em;
+    align-items: center;
+    padding: 5px 30px;
+    
+  }
+  
+  .navbar .nav-header {
+    margin: auto;
+    display: inline;
+  }
+  .navbar .nav-header .nav-logo {
+    display: inline-block;
+    margin-top: -7px;
+  }
+  .navbar .nav-links {
+    display: inline;
+    float: right;
+    font-size: 5px;
+  }
+  
+  /*Tipografia menu*/
+  .navbar .nav-links a {
+    font-family: "Lato", sans-serif;
+    padding: 20px 12px;
+    text-decoration: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  /* Hover effects */
+  .navbar .nav-links a:hover {
+    background-color: #fa9e69;
+    border-radius: 6px;
+  }
+  
+  /* responsive navbar toggle button */
+  .navbar #nav-check,
+  .navbar .nav-btn {
+    display: none;
+  }
+  
+  @media (max-width: 700px) {
+
+    .navbar{
+      background-color: #94999c;
+    }
+    .nav__logo{
+      z-index: 2000;
+    }
+    .navbar #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 70px);
+      overflow-y: auto;
+      
+    }
+    .navbar .nav-btn {
+      display: inline-block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      
+    }
+    /*Icono Hamburguesa*/
+    .navbar .nav-btn label {
+      display: inline-block;  
+      width: 80px;
+      height: 70px;
+      padding: 25px;
+    }
+  
+    /*Color lineas hamburguesa*/
+   
+    .navbar .nav-btn label:hover,
+    .navbar #nav-check:checked ~ .nav-btn label {
+      transition: all 0.5s ease;
+    }
+    /* Color fondo Menu Hamburguesa*/
+    .navbar .nav-links {
+      position: absolute;
+      display: block;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      background-color: #94999c;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 70px;
+      right: 0px;
+      border-radius: 6px;
+    }
+    .navbar .nav-links a {
+      display: block;
+    }
+  
+    /* when nav toggle button not checked */
+    .navbar #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+  
+    /* when nav toggle button is checked */
+    .navbar #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 70px);
+      overflow-y: auto;
+    }
+  
+    .navbar .nav-links .loginBtn {
+      padding: 10px 40px;
+      margin: 20px;
+      font-size: 14px;
+      font-family: "Urbanist", sans-serif;
+      color: rgb(255, 255, 255);
+    }
+    /* Responsive dropdown code */
+    .navbar .nav-links .dropdown,
+    .navbar .nav-links .dropdown2 {
+      float: none;
+      width: 100%;
+    }
+    .navbar .nav-links .drop-content,
+    .navbar .nav-links .drop-content2 {
+      position: relative;
+      background-color: #858b8f;
+      top: 0px;
+      left: 0px;
+    }
+    /* Text color sub menu Hamburguesa */
+    .navbar .nav-links .drop-content a {
+      color: rgb(255, 255, 255);
+    }
+  }
+  
+  /* Dropdown menu CSS code */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .drop-content,
+  .drop-content2 {
+    display: none;
+    position: absolute;
+    background-color: #9ea3a7;
+    border-radius: 6px;
+    min-width: 120px;
+    font-size: 16px;
+    font-family: "Urbanist", sans-serif;
+    top: 34px;
+  }
+  /* on hover show dropdown */
+  .dropdown:hover .drop-content,
+  .dropdown2:hover .drop-content2 {
+    display: block;
+  }
+  /* Color lineas links */
+  .drop-content a {
+    padding: 12px 10px;
+    border-bottom: 1px solid #757c81;
+    display: block;
+    transition: all 0.5s ease !important;
+  }
+  .dropBtn .drop-content a:hover {
+    background-color: rgb(250, 158, 102) ;
+  }
+  .dropdown:hover .dropBtn,
+  .dropdown2:hover .dropBtn2 {
+    background-color: rgb(250, 158, 102) ;
+  }
+  .dropdown2 .drop-content2 {
+    position: absolute;
+    left: 120px;
+    top: 126px;
+  }
+  .dropBtn2 i {
+    margin-left: 15px;
+  }
+
+/*galeria*/
+
+  .galeria_contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 170px;    
+    gap: 10px;
+    border-radius: 6px;
+    margin: auto;
+    background: #16181a;
+    width: -webkit-fill-available;
+    padding: 20px;
+
+
+
+}
+
+.galeria__item{
+    position: relative;
+}
+.galeria__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.galeria__titulo{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    background: linear-gradient(rgba(255,255,255,0), rgba(255, 193, 165, 0.935));
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    font-size: 17px;
+}
+.galeria__item:nth-child(7){
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+}     
+
+
+/*@media(min-width:1024px){
+    /*.galeria_contenedor{
+      margin-right: 40px;
+      /* margin: auto; 
+      margin-bottom: 100px;
+  
+  }
+    
+    .galeria__item:nth-child(4){
+        grid-column-start: span 4;
+        grid-row-start: span 4;
+    }     
+   
+    
+  
+  }*/
+
+
+/*Aside/menu lateral*/
+
+.izquierda {  
+  background-color: #eeeeee;     
+    background-repeat: no-repeat;      
+    width: 70%; 
+    padding: 30px;             
+  }
+  
+  .derecha {  
+    background-color: #eeeeee;  
+    /*background-image: url("../imagen/fonfoTextura4.png");*/     
+    width: 70%;
+    background-repeat: no-repeat;
+    padding: 30px;    
+    
+  }
+  
+ #pantalla-dividida {      
+    display: flex;
+    background: #eeeeee;
+    margin: auto;
+    justify-content: center;
+ 
+    
+  }
+  
+
+  .pantallas-divididas{
+    display: flex;   
+    margin: auto;
+    justify-content: center;
+    flex-direction: row-reverse;
+    
+
+  }
+ 
+  .pantalla_izquierda{   
+    background-color: #fff;   
+    background-repeat: no-repeat;  
+    width: 70%;
+    padding: 30px;
+    
+  }
+  
+  .pantalla_derecha{    
+    /*background-image: url("../imagen/fonfoTextura4.png");*/     
+    background: #393f45;
+    background-repeat: no-repeat;
+    width: 70%;
+    padding: 30px;   
+
+  }
+ 
+
+  /*Descripcion del alquiler*/
+
+  img{
+    max-width: 100%;
+  }
+
+  .contenedor_titulo{
+    padding: 30px;
+    background-color: #eee;
+    margin-bottom: 50px;
+    color: #222;
+  }
+
+  .contenedor_img{
+    background-color: #f7f7f9;
+    flex: 1;
+  }
+
+  .contenedor_info_alquiler{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contenedor_precio{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e4e4e4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  select {
+    word-wrap: normal;
+    width: 101%;
+    border-radius: 10px;
+    /* height: 20%; */
+    font-size: 15px;
+    padding: 10px;
+}
+  .contenedor_precio span{
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+ 
+  .form-check {
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5em;
+    margin-bottom: 0.5rem;
+}
+  .form_grupo{
+    display: table;
+    
+    margin-bottom: 15px;
+  }
+
+  .form_grupo label {   
+    color: #222;
+    font-weight: 500;
+    margin-left: 20PX;
+
+  }
+
+  .form_grupo select{
+    width: 300px;
+    border: none;
+    padding: 12px 15px;
+    background-color: #f7f7f7;
+    outline: none;
+    color: #666;
+  }
+
+  .btn_limpiar{
+    border: none;
+    background: none;
+    color: #666;
+    margin-left: 120px;
+    cursor: pointer;
+  }
+
+  .btn_limpiar:hover{
+    color: #1bbeb4;
+  }
+
+  /*Parte de añadir al carrito*/
+  .contenedor_add_card{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e4e4e4;
+  }
+
+  .contenedor_cantidad{
+    position: relative;
+  }
+
+  .input_cantidad{
+    border: none;
+    padding: 10px;
+    width: 60px;
+    height: 100%;
+    color: #666;
+    font-weight: 500;    
+  }
+
+  .input_cantidad::-webkit-inner-spin-button,
+  .input_cantidad::-webkit-outer-spin-button{
+    -webkit-apperance:none;
+    appearance: none;
+  }
+
+  .btn-add-to-cart{
+    border: none;
+    background-color: #ffffff;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  
+  .btn-incrementar-decrementar{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:7px;
+    right: 7px;
+  }
+
+.btn-incrementar-decrementar i{
+font-size: 11px;
+color: #666;
+cursor: pointer;    
+}
+
+
+.btn-incrementar-decrementar{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:7px;
+    right: 7px;
+  }
+
+.btn-incrementar-decrementar:hover{
+    color: #1bbeb4;
+}
+
+  .btn-add-to-cart:hover{
+    color: #1bbeb4 ;
+  }
+
+  .hidden{
+    display: none;
+  }
+
+ 
+
+  .titulo_descripcion, .titulo_informacion_adicional, .titulo-resenias, .contenedor_social{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom:  1px solid #e4e4e4 ;
+  }
+
+  .titulo_descripcion h4, .titulo_informacion_adicional h4, .titulo-resenias h4{
+   font-weight: 300;
+   color: #666;
+   font-size: 15px;
+  }
+
+  .texto_descripcion, .texto_informacion_adicional, .texto-resenias{
+    font-size: 15px;
+    color: #252525;
+    line-height: 22px;
+    margin-top: 25px;
+  }
+
+  .contenedor_social{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+    
+  }
+
+  .contenedor_social span{
+    font-weight: 300;
+    color:#252525;
+  }
+
+  .contenedor_boton_social{
+    display: flex;
+    gap: 15px;
+    
+  }
+  .contenedor_boton_social a:link,
+  .contenedor_boton_social a:visited{
+    color: #666;
+    font-size: 15px;
+  }
+
+  .contenedor_boton_social:hover{
+    color: #1bbeb4;
+  }
+
+  .contenedor_relato_alquiler h2{
+    text-align: center;
+    font-family: "Lora" sans-serif;
+    background: #e5e5e5;
+  }
+
+  .card_lista_alquiler{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    background: #cccccc;
+   padding: 20px;
+  }
+
+  .card{
+    cursor: pointer;
+  }
+
+  .card-img{
+    background: transparent;
+    margin-bottom: 15px;
+  }
+
+  .card-img img{
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  .info_card{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .texto_alquiler{
+    color: #252525;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  .texto_alquiler h3{
+    color: #63a2bd;
+    font-weight: inherit;
+    font-size: 15px;
+  }
+
+  .texto_alquiler h3:hover{
+    color: #1bbeb4;
+  }
+
+  .texto_alquiler p{
+    color: #666;
+    font-size: 13px;
+  }
+
+  .texto_alquiler p:hover{
+    color: #1bbeb4;
+  }
+
+  /*Calendario reserva*/
+
+  .row{
+    width: 100%;
+  }
+  .form-check{
+    color:#fff;
+  }
+  /*.buscador_alquiler{
+    /*background-image: url(1.png);
+    background: #ffffff;
+    width: 22%;
+    padding: 3px;   
+
+  }*/
+
+  
+
+  .btn-blue {
+    background-color: #02122c;
+}
+
+.bg-blue {
+    background-color: #02122ced;
+    border-radius: 20px;
+    width: auto;
+    margin-top: 20px;
+    
+}
+
+.bg-gray {
+    background-color: #dddde5;
+}
+
+.btn-gray {
+    background-color: #dddde5;
+}
+
+.fs-8 {
+    font-size: 12px;
+}
+
+.fs-8{
+    font-size: 17px;
+}
+
+/*.fightImg {
+    
+    /*background-image: url(1.png);
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+}*/
+
+.d-flex{
+  flex-direction: column;
+}
+
+.form-control,
+.datalistOptions,
+.form-label
+{    
+    /*display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;*/
+    border-radius: 10px;
+}
+
+.btn-green{
+    background-color: #76b7d2;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.bg-sm-blue{
+    background-color:#042759 ;
+}
+
+.col-lg-5{
+    margin: 50px 0;
+}
+
+.buscador_alquiler{
+    margin-bottom: 20px;
+}
+
+/*Check*/
+.mycheckbox input:checked ~ span::after{
+    background: rgb(85, 255, 85);
+    transform: scale(0.85) translate(35px);
+  }
+  .mycheckbox input:checked ~ span .on{
+    transform: translate(30px);
+    opacity: 1;
+  }
+  
+  .mycheckbox input:checked ~ span .off{
+    transform: translate(30px);
+    opacity: 0;
+  }
+  
+  .mycheckbox input:checked ~ span .on-bell{
+    transform: translate(31px);
+  }
+  
+  .mycheckbox input {
+    display: none;
+  }
+  
+  .mycheckbox span {
+  display: list-item;
+    /* margin: auto; */
+    text-align: center;
+    align-items: center;
+    width: 60px;
+    /* height: 30px; */
+    border-radius: 30px;
+    background: #070707cf;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 2px rgb(194, 192, 192);  
+    position: relative;
+  }
+  
+  .mycheckbox span::after {
+    /*content: "";*/
+    display: block;
+   width: 30px;
+    height: 30px;
+    transform: scale(0.85);
+    border-radius: 30px;
+    background: rgb(252, 64, 64);
+    transition: 0.5s;
+    box-shadow: inset 0px 0px 2px rgb(206, 201, 201);
+  }*/
+  
+  .mycheckbox i {
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    z-index: 1;
+    color: white;
+    transition: 0.5s;
+  }
+  
+  .mycheckbox .on {
+    opacity: 0;
+    left: 7px;
+    top: 7px;
+  }
+  
+  .mycheckbox .off {
+    left: 9px;
+    top: 7px;
+  }
+  
+  .mycheckbox .off-bell {
+    left: 5px;
+  }
+/*Like y  Deslike*/
+
+.puntuacion{
+  border:3px solid #303030;
+  padding: 20px;
+  width: 350px;
+  text-align: center;
+  border-radius: 4px;
+  position: relative;
+}
+
+h2{
+  font-family: "Lora" sans-serif;
+  color: #63a2bd;
+  padding: 20px 0;
+  font-size: 40px;
+}
+
+
+
+.voting{
+  position: relative;
+ 
+  border-radius: 4px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+input{
+  width: 50px;
+  border: none;
+  background: none;
+  color: #919191;
+  font-size: 20px;
+  margin: 0 10px;
+  pointer-events: none;
+}
+
+button{
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 30px;
+  padding: 0 15px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+button:active{
+  color:#ffbb94;
+  transform: scale(1.2);
+}
+
+/*Opiniones*/
+
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 50px auto 45px auto;
+  width: 90%;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.contenedor>div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2D4263;
+  height: 400px;
+  width: 400px;
+  border-radius: 20px;
+  flex-direction: column;
+  padding-top: 35px;
+  gap: 25px;
+  flex: 1 1 300px;
+}
+
+.contenedor>div>form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contenedor>div>form>input,
+select {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  color: black;
+}
+option{
+  color: black;
+}
+
+.contenedor .button {
+  margin-top: 20px;
+  height: 30px;
+  border-radius: 7px;
+  border: none;
+  color: black;
+}
+
+.contenedorProductos h2 {
+  text-align: center;
+  padding-bottom: 20px;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.mostrarProductos {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+}
+
+.mostrarProductos>div {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: #2D4263;
+  border-radius: 20px;
+}
+
+.informacion {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.informacion>p:first-child {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.informacion .precio {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+.contenedorMensaje {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  height: 70px;
+}
+
+.repetidoError,
+.realizado,
+.llenarCampos,
+.noExsiteError {
+  margin: 15px 0px;
+}
+
+.llenarCampos::after,
+.noExsiteError::after,
+.repetidoError::after,
+.realizado::after {
+  background-color: red;
+  font-size: 17px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.realizado::after {
+  content: 'Realizado';
+  background-color: green;
+}
+
+.repetidoError::after {
+  content: 'Este elemento ya existe';
+}
+
+.llenarCampos::after {
+  content: 'Por favor compruebe que todos los campos estan llenos';
+}
+
+.noExsiteError::after {
+  content: 'Este elemento no existe';
+}
+
+/*Opinion*/
+.grid{
+  background-repeat: no-repeat;
+  width: 25%;
+  padding: 30px;  
+  margin-left: 10px;
+  margin-top: 150px;
+  background: black;
+  border-radius: 20px;
+  margin: auto;
+  margin-bottom: 90px;
+}
+
+.items{
+ background-color: #fff;
+ border: solid thin #e1e1e1;
+ border-radius: 8px;   
+}
+
+.items img{
+  width: 100%;
+  height: 170px;
+}
+
+.info{
+  padding: 15px;
+}
+
+.info h3{
+  font-size: 1.6rem;
+}
+
+.info p{
+  font-size: 1.8rem;
+}
+
+
+.precio p:first-child{
+  text-decoration: line-through;    
+}
+
+.precio{
+  display: flex;
+  justify-content: space-between;
+  font-weight: bolder;
+}
+
+.precio p{
+  font-size: 1.8rem;
+}
+
+.info h3,
+.info p{
+  color: #000000;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.info button{
+  color: #f3f3f3;
+  padding: 1rem;
+  width: 100%;
+  background-color: #000000;
+  border: none;
+  outline: #fff;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.info button:hover{
+  background-color: #c34b2dc0;
+  transition: all .3;
+}
+
+
+
+/*<!--Hoteles and car rental-->
+
+<div class="container pc-5" style="margin-top: 5%; margin-bottom: 5%;"></div>
+<h3>Plan your next statycation</h3>
+<div class="d-flex align-item-center justify-content-between pt-3">
+    <div>
+        <div class="btn btn-primary rounded-pill fs-8">La plata</div>
+        <div class="btn btn-ligth rounded-pill fs-8">Bs As</div>
+        <div class="btn btn-ligth rounded-pill fs-8">Palermo</div>
+        <div class="btn btn-ligth rounded-pill fs-8">Corrientes</div>
+        <div class="btn btn-ligth rounded-pill fs-8">Miami</div>
+    </div>
+    <div class="btn btn-link fs-8">View More Hotels</div>
+</div>
+<!--Hotels lg/md-->
+<div class="container-fluid d-none d-md-flex d-xl-flex flex-column">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 d-flex">
+            <div class="card border-0" style="width: 18rem;">
+                <img src="casa1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-subtitle mb-2 text-muted fs-8">Las vegas, United States</div>
+                  <h5 class="card-title">Trump International Hotel Las Vegas</h5>
+                  <div class="d flex aling-items-center justify-content-between">
+                    <div>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                    </div>
+                  </div>
+                  <p class="card-text text-dark">$90.000 <span class="fs-8">Per Night</span></p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        <div class="card border-0 mx-2" style="width: 18rem;">
+            <img src="casa1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <div class="card-subtitle mb-2 text-muted fs-8">Las vegas, United States</div>
+              <h5 class="card-title">Trump International Hotel Las Vegas</h5>
+              <div class="d flex aling-items-center justify-content-between">
+                <div>
+                    <i class="fa-solid fa-start text-warnin"></i>
+                    <i class="fa-solid fa-start text-warnin"></i>
+                    <i class="fa-solid fa-start text-warnin"></i>
+                    <i class="fa-solid fa-start text-warnin"></i>
+                    <i class="fa-solid fa-start text-warnin"></i>
+                </div>
+              </div>
+              <p class="card-text text-dark">$90.000 <span class="fs-8">Per Night</span></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<!--Hotels lg/md end-->
+
+<!--Hotels SM-->
+<div class="container-fluid d-flex d-md-flex-none d-xl-none flex-column">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-1">
+            <div class="card border-0" style="width: 18rem;">
+                <img src="casa1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-subtitle mb-2 text-muted fs-8">Las vegas, United States</div>
+                  <h5 class="card-title">Trump International Hotel Las Vegas</h5>
+                  <div class="d flex aling-items-center justify-content-between">
+                    <div>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                    </div>
+                  </div>
+                  <p class="card-text text-dark">$90.000 <span class="fs-8">Per Night</span></p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card border-0 mx-2" style="width: 18rem;">
+                <img src="casa1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-subtitle mb-2 text-muted fs-8">Las vegas, United States</div>
+                  <h5 class="card-title">Trump International Hotel Las Vegas</h5>
+                  <div class="d flex aling-items-center justify-content-between">
+                    <div>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                    </div>
+                  </div>
+                  <p class="card-text text-dark">$90.000 <span class="fs-8">Per Night</span></p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        
+        <div class="col-md-10"></div>
+    </div>
+</div>
+<!--Hotels SM END-->
+
+<!--Car Rental LG/MD-->
+<div class="container-fluid mt-5 d-none d-md-flex d-xl-flex flex-column">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 d-flex">
+            <div class="card border-0" style="width: 18rem;">
+                <img src="casa1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-subtitle mb-2 text-muted fs-8">Las vegas, United States</div>
+                  <h5 class="card-title">Trump International Hotel Las Vegas</h5>
+                  <div class="d flex aling-items-center justify-content-between">
+                    <div>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                    </div>
+                  </div>
+                  <p class="card-text text-dark">$90.000 <span class="fs-8">Per Night</span></p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        <div class="card border-0 mx-2" style="width: 18rem;">
+            <img src="casa1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <div class="card-subtitle mb-2 text-muted fs-8">Las vegas, United States</div>
+              <h5 class="card-title">Trump International Hotel Las Vegas</h5>
+              <div class="d flex aling-items-center justify-content-between">
+                <div>
+                    <i class="fa-solid fa-start text-warnin"></i>
+                    <i class="fa-solid fa-start text-warnin"></i>
+                    <i class="fa-solid fa-start text-warnin"></i>
+                    <i class="fa-solid fa-start text-warnin"></i>
+                    <i class="fa-solid fa-start text-warnin"></i>
+                </div>
+              </div>
+              <p class="card-text text-dark">$90.000 <span class="fs-8">Per Night</span></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+<!--Car Rental LG/MD END-->
+
+<!--Car Rental SM-->
+<div class="container-fluid d-flex d-md-flex-none d-xl-none flex-column">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card border-0" style="width: 18rem;">
+                <img src="casa1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-subtitle mb-2 text-muted fs-8">Las vegas, United States</div>
+                  <h5 class="card-title">Trump International Hotel Las Vegas</h5>
+                  <div class="d flex aling-items-center justify-content-between">
+                    <div>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                    </div>
+                  </div>
+                  <p class="card-text text-dark">$90.000 <span class="fs-8">Per Night</span></p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card border-0 mx-2" style="width: 18rem;">
+                <img src="casa1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-subtitle mb-2 text-muted fs-8">Las vegas, United States</div>
+                  <h5 class="card-title">Trump International Hotel Las Vegas</h5>
+                  <div class="d flex aling-items-center justify-content-between">
+                    <div>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                        <i class="fa-solid fa-start text-warnin"></i>
+                    </div>
+                  </div>
+                  <p class="card-text text-dark">$90.000 <span class="fs-8">Per Night</span></p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>        
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+
+<!--Car Rental SM END-->
+
+<!--Hoteles and car rental end-->*/
+
+/*Calendario*/
+/*<div class="container">
+                    <div class="left">
+                        <div class="calendar">
+                            <div class="month">
+                                <i class="fas fa-angle-left prev"></i>
+                                <div class="date">december 2015</div>
+                                <i class="fas fa-angle-right next"></i>
+                            </div>
+                            <div class="weekdays">
+                                <div>Sun</div>
+                                <div>Mon</div>
+                                <div>Tue</div>
+                                <div>Wed</div>
+                                <div>Thu</div>
+                                <div>Fri</div>
+                                <div>Sat</div>
+                            </div>
+                            <div class="days"></div>
+                            <div class="goto-today">
+                                <div class="goto">
+                                    <input type="text" placeholder="mm/yyyy" class="date-input" />
+                                    <button class="goto-btn">Go</button>
+                                </div>
+                                <button class="today-btn">Today</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="today-date">
+                            <div class="event-day">wed</div>
+                            <div class="event-date">12th december 2022</div>
+                        </div>
+                        <div class="events"></div>
+                        <div class="add-event-wrapper">
+                            <div class="add-event-header">
+                                <div class="title">Add Event</div>
+                                <i class="fas fa-times close"></i>
+                            </div>
+                            <div class="add-event-body">
+                                <div class="add-event-input">
+                                    <input type="text" placeholder="Event Name" class="event-name" />
+                                </div>
+                                <div class="add-event-input">
+                                    <input type="text" placeholder="Event Time From" class="event-time-from" />
+                                </div>
+                                <div class="add-event-input">
+                                    <input type="text" placeholder="Event Time To" class="event-time-to" />
+                                </div>
+                            </div>
+                            <div class="add-event-footer">
+                                <button class="add-event-btn">Add Event</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-event">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                </section>
+                
+                
+                
+                
+                
+                <section class="buscador_alquiler">
+        <div class="container_buscador pt-3">
+            <div class="row d-flex justify-content-between">
+                <div class="col-lg-5">
+                    <div class="d-flex-flex-column">
+                        <h5 class="text-primary fw-bold"></h5>
+                        <div class="d-flex aling-itms-center pt-3">
+                            <!--<div class="btn btn-blue fw-bold text-white" style="margin: 4px;">Quincho</div>
+                            <div class="btn btn-primary fw-bold nx-1" style="margin: 4px;">Patio</div>
+                            <div class="btn btn-primary fw-bold " style="margin: 4px;">Garage</div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="d-flex align-items-center">
+                        <!--<p class="text-primary m-0 fs-8">Help</p>
+                        <input type="text" placeholder="Pesos Argentinos $"
+                            class="form-control bg-gray rounded-3 border-0 mx-2 fs-8 w-50 py-2">
+                        <div class="btn btn-gray text-primary fw-bold rounded-3 py-1">Log in</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="contenedor_titular">
+        <div class="fightImg d-none d-md-flex d-xl-flex flex-column">
+            <h1 class="titulo_color " style="font-size:35px; padding: 30px; margin: auto;">Reservar
+                Alquiler</h1>
+            <div class="container-fluid" style="padding-bottom: 22%;">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 bg-blue p-4 round-1">
+                        <div class="d-flex flex-column">
+                            <!--Radio Buttons-->
+                            <div >
+                                <div class="divd-flex- flex-colum">
+                                    <div class="d-flex align-items-center text-white ">
+                                        <div class="form-check">
+                                            <input type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                                class="form-check input" checked>
+                                            <label for="" class="form-check-label" form="flexRadioDefault2"></label>
+                                            Opcion 1
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                                class="form-check input">
+                                            <label for="" class="form-check-label" form="flexRadioDefault2"></label>
+                                            Opcion 2
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" name="flexRadioDefault" id="flexRadioDefault3"
+                                                class="form-check input">
+                                            <label for="" class="form-check-label" form="flexRadioDefault3"></label>
+                                            Opcion 3
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Radio Buttons end-->
+
+                            <!--Input Fields-->
+                            <div class="d flex align-items-contener py-2">
+                                <!--Form-->
+                                <div>
+                                    <label for="exampleDataList"
+                                        class="form-label web-0 text-white fs-8 ">Ubicación</label>
+                                    <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                        placeholder="Elige una opción">
+                                    <datalist id="datalistOptions">
+                                        <option value="San Francisco">
+                                        <option value="New York">
+                                        <option value="Seattle">
+                                        <option value="Los Angeles">
+                                        <option value="Chicago">
+                                    </datalist>
+                                </div>
+                                <!--Form end-->
+
+                                <!--Top-->
+                                <div>
+                                    <label for="exampleDataList"
+                                        class="form-label web-0 text-white fs-8 ">Personas</label>
+                                    <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                        placeholder="Elige una opción">
+                                    <datalist id="datalistOptions">
+                                        <option value="Entre 1 a 4">
+                                        <option value="Entre 5 a 10">
+                                        <option value="Santo Domingo, Bs. As.">
+                                        <option value="Bs. As.">
+                                        <option value="Bs. As.">
+                                    </datalist>
+                                </div>
+                            </div>
+
+                            <!--Top end-->
+
+
+                            <!--Departure-->
+                            <div>
+                                <label for="" class="form-label mb-0 text-white fs-8">Entrada</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+
+                            <!--Departure end-->
+
+                            <!--Return-->
+                            <div>
+                                <label for="" class="form-label mb-0 text-white fs-8">Salida</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <!--Return end-->
+
+                            <!--Cabin class-->
+                            <div>
+                                <label for="" class="form-label mb-0 text-white fs-8 "
+                                    style="margin: 20px 0;">Tipo de evento:
+                                </label>
+                                <select name="form-select" aria-label="Default select example" id="">
+                                    <option selected> Festejo</option>
+                                    <option value="1">Ocio</option>
+                                    <!--<option value="2">De 10 a 15</option>
+                                    <option value="3">De 15 a 20</option>-->
+
+                                </select>
+
+                            </div>
+                            <!--Cabin  class end-->
+
+
+
+                            <!--Input Fields end-->
+
+                            <!--Check Buttons-->
+                            <div class="d-flex aling items-center justify-content-between pt-2">
+                                <div class="d-flex flex-column">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label fs-8 text-white" for="flexCheckDefault">
+                                            Add service Alquiler
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                            checked>
+                                        <label class="form-check-label fs-8 text-white " for="flexCheckChecked">
+                                            Non-stop flight only
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="btn btn-green  fs-6 fw-bold text-white">Enviar &#8594;</div>
+                            </div>
+
+                            <!--Check Buttons end-->
+                        </div>
+
+
+
+                        <div class="informacion_adicional">
+                    <div class="titulo-resenias">
+                        <h4>Reseñas</h4>
+                        <!--Aca iria el formulario para calificar-->
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="texto_resenias">
+                    <p></p>
+                </div>           
+                    </div>*/

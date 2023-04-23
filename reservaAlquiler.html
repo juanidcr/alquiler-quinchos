@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>AlquilerReserva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/a90f1b68c4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/estilosReserva.css" />
+    <script src="https://kit.fontawesome.com/a90f1b68c4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+
+</head>
+
+
+<body>
+    <header class="hero">
+        <div class="navbar">
+
+            <h2 class="nav__logo"><img src="imagen/logo.png" class="image" width="30%" height="30%" /></h2>
+
+            <div class="nav-links">
+
+                <div class="nav-header">                   
+                    <a href="carritoAlquiler.html">Alquileres</a>
+                    <a href="#opinion">Opinión</a>
+                    <a href="#formulario">Formulario </a>
+                    <a href="#similares">Similares</a>
+                    <a href="#galeria">Galeria</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+    <br><br><br><br><br><br>
+    <br><br><br><br>
+
+    
+
+
+
+    
+
+    <section class="pantallas-divididas">
+
+
+        <div class="pantalla_derecha">
+            <div class="voting">
+                <p style="text-align: center; font-size: 20px; justify-content: center; margin: auto; font-size: 20px;border-bottom: 1px solid #e4e4e4; width:100%;">Calificación:
+                </p>
+                <button id="likebtn">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                </button>
+                <input type="number" id="input1" value="0" name="">
+
+                <button id="dislikebtn">
+                    <i class="fa-solid fa-thumbs-down"></i>
+                </button>
+                <input type="number" id="input2" value="0" name="">
+
+            </div>
+            <section id="galeria" class="galeria_contenedor">
+              
+           
+                <div class="galeria__item">
+                    <a href="galeriaAlquiler.html"><img src="./imagen/casa1.jpg" alt="" class="galeria__img"></a>                   
+                </div>
+                <div class="galeria__item">
+                    <a href="galeriaAlquiler.html"><img src="./imagen/casa2.jpg" alt="" class="galeria__img"></a>                   
+                </div>
+                <div class="galeria__item">
+                    <a href="galeriaAlquiler.html"><img src="./imagen/casa3.jpg" alt="" class="galeria__img"></a>                    
+                </div>
+                <div class="galeria__item">
+                    <a href="galeriaAlquiler.html"><img src="./imagen/casa4.jpg" alt="" class="galeria__img"></a>                    
+                </div>
+                <div class="galeria__item">
+                    <a href="galeriaAlquiler.html"><img src="./imagen/casa4.jpg" alt="" class="galeria__img"></a>                    
+                </div>
+                <div class="galeria__item">
+                    <a href="galeriaAlquiler.html"><img src="./imagen/casa2.jpg" alt="" class="galeria__img"></a>
+                </div>
+                <div class="galeria__item">
+                    <a href="galeriaAlquiler.html"><img src="./imagen/casa2.jpg" alt="" class="galeria__img"></a>
+                </div> 
+                <div class="btn btn-green   fw-bold text-white" style="width: 50%; height: 20%;"> Ver más &#8594;</div>
+
+            </section>
+            
+        </div>
+        
+        
+        <div class="pantalla_izquierda">                  
+
+            <div class="encerrar_calendario">
+                <div class="contenedor_descripcion">
+                    <div class="contenedor-info-alquiler">
+
+                        <a href="opinionYFotos.html" style="justify-content: left;">Danos tu Opinion<i class="fa-solid fa-pen" style="color: #666; font-size:20px; margin-left: 20px; "></i> </a>
+                        <div class="contenedor_social">
+                            <h1 class="titulo_color " style="font-size:30px; text-align: left;">Descripción:</h1>
+                            
+                            <div class="contenedor_boton_social">
+                                <a href=""><i class="fa-brands fa-facebook"
+                                        style="font-size:30px; justify-content: flex-end;"></i> </a>
+                                <a href=""><i class="fa-brands fa-instagram"
+                                        style="font-size:30px; justify-content: flex-end"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- <div class="contenedor_titulo_alquiler">
+                                    <div class="form_grupo">
+                                        <label for="colour">Color</label>
+                                        <select name="colour" id="colour">
+                                            <option value="" disabled selected value="">Escoge una opción</option>
+                                            <option value="rojo">Rojo</option>
+                                            <option value="rosa">Rosa</option>
+                                            <option value="azul">Azul</option>
+                                        </select>
+                                    </div>
+                                    <div class="form_grupo">
+                                        <label for="colour">Color</label>
+                                        <select name="colour" id="colour">
+                                            <option value="" disabled selected value="">Escoge una opción</option>
+                                            <option value="rojo">Rojo</option>
+                                            <option value="rosa">Rosa</option>
+                                            <option value="azul">Azul</option>
+                                        </select>
+                                    </div>-->
+                    <!--<button class="btn-clean">Limpiar</button>-->
+
+
+
+
+                    <div class="contenedor_price  ">
+                        <span style="    font-weight: 300;
+                    color: #666;
+                    font-size: 15px;">Servicios Incluidos:</span>
+                    </div> <br>
+                    <div class="form_grupo" style="font-size: 20px;border-bottom: 1px solid #e4e4e4; width:100%;">
+                        <!--<select name="colour" id="colour">
+                            <option value="" disabled selected value="">Escoge una opción</option>
+                            <option value="rojo"> Menos de 5</option>
+                            <option value="rosa"> De 6 a 15</option>
+                            <option value="azul"> De 15 a 35</option>
+                        </select>-->
+
+
+                        <label class="mycheckbox">
+                            <!--<input type="checkbox" name="">-->
+                            <span>
+                                <i class="fa-solid fa-wifi" style="justify-content: center; color: aliceblue;"></i>
+                                <!--<i class="fa-solid fa-wifi"></i>-->
+                            </span>
+                        </label>
+                        <label class="mycheckbox">
+
+                            <!--<input type="checkbox" name="">-->
+                            <span>
+                                <!--<i class="fa-solid fa-wifi"></i>-->
+                                <i class="fa-solid fa-car" style="justify-content: center; color: aliceblue;"></i>
+                                <!-- <i class="fa-duotone fa-garage"></i>-->
+                            </span>
+                        </label>
+                        <label class="mycheckbox">
+                            <!-- <input type="checkbox" name="">-->
+                            <span>
+                                <i class="fa-sharp fa-solid fa-chair"
+                                    style="justify-content: center; color: aliceblue;"></i>
+                                <!--<i class="fas fa-check on"></i>
+                            <i class="fas fa-times off"></i>-->
+                            </span>
+                        </label>
+                        <label class="mycheckbox">
+                            <!-- <input type="checkbox" name="">-->
+                            <span>
+                                <i class="fa-solid fa-music" style="justify-content: center; color: aliceblue;"></i>
+                                <!--<i class="fas fa-bell on on-bell"></i>
+                            <i class="fas fa-bell-slash off off-bell"></i>-->
+                            </span>
+                        </label>
+                        <label class="mycheckbox">
+                            <!-- <input type="checkbox" name="">-->
+                            <span>
+                                <i class="fa-solid fa-tv" style="justify-content: center; color: aliceblue;"></i>
+                                <!--<i class="fas fa-check on"></i>
+                            <i class="fas fa-times off"></i>-->
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="contenedor_price" style="font-size: 20px;border-bottom: 1px solid #e4e4e4; width:100%;">
+                        <span>$80.000</span>
+
+                    </div> <br>
+
+                    <div class="titulo_descripcion">
+                        <h4>Descripción</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="texto_descripcion">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quaerat,
+                            reiciendis
+                            alias asperiores voluptatem harum sed, temporibus porro aliquid eius error
+                            debitis
+                            veritatis, in beatae facere aliquam ad tempora numquam!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quaerat,
+                            reiciendis
+                            alias asperiores voluptatem harum sed, temporibus porro aliquid eius error
+                            debitis
+                            veritatis, in beatae facere aliquam ad tempora numquam!</p>
+                    </div>
+
+
+
+
+
+
+                    <section id="formulario" class="buscador_alquiler">
+
+                        <div class="container_buscador">
+                            <div class=" ">
+                                <div class="col">
+                                    <div class="d-flex-flex-column">
+                                        <h5 class="text-primary "></h5>
+                                        <div class="d-flex ">
+                                            <!--<div class="btn btn-blue fw-bold text-white" style="margin: 4px;">Quincho</div>
+                <div class="btn btn-primary fw-bold nx-1" style="margin: 4px;">Patio</div>
+                <div class="btn btn-primary fw-bold " style="margin: 4px;">Garage</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="d-flex">
+                                        <!--<p class="text-primary m-0 fs-8">Help</p>
+            <input type="text" placeholder="Pesos Argentinos $"
+                class="form-control bg-gray rounded-3 border-0 mx-2 fs-8 w-50 py-2">
+            <div class="btn btn-gray text-primary fw-bold rounded-3 py-1">Log in</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <div class="contenedor_titular">
+                        <div class="fightImg">
+                            <h1 class="titulo_color " style="font-size:30px; text-align: left; border-bottom: 1px solid #e4e4e4; width:100%; ">Formulario: </h1>
+
+
+                                <div class="container-fluid" style="padding-bottom: 22%;">
+                                    <div class="">
+                                        <div class="col-lg-2"></div>
+                                        <div class="col-lg-8 bg-blue p-4 round-1">
+                                            <div class="d-flex flex-column">
+                                                <!--Radio Buttons
+                <div >
+                    <div class="divd-flex- ">
+                        <div class="d-flex  ">
+                            <div class="form-check">
+                                <input type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                    class="form-check input" checked>
+                                <label for="" class="form-check-label" form="flexRadioDefault2"></label>
+                                Opcion 1
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                    class="form-check input">
+                                <label for="" class="form-check-label" form="flexRadioDefault2"></label>
+                                Opcion 2
+                            </div>                                   
+                        </div>
+                    </div>-->
+
+                                          
+                                            <!--Radio Buttons end-->
+
+                                            <!--Input Fields-->
+                                            <div class="d flex align-items-contener py-2">
+                                                <!--Form-->
+                                                <div>
+                                                    <label for="exampleDataList"
+                                                        class="form-label web-0 text-white fs-8 ">Ubicación</label>
+                                                    <input class="form-control" list="datalistOptions"
+                                                        id="exampleDataList" placeholder="Elige una opción">
+                                                    <datalist id="datalistOptions">
+                                                        <option value="San Francisco">
+                                                        <option value="New York">
+                                                        <option value="Seattle">
+                                                        <option value="Los Angeles">
+                                                        <option value="Chicago">
+                                                    </datalist>
+                                                </div>
+                                                <!--Form end-->
+
+                                                <!--Top-->
+                                                <div>
+                                                    <label for="exampleDataList"
+                                                        class="form-label web-0 text-white fs-8 ">Personas</label>
+                                                    <input class="form-control" list="datalistOptions"
+                                                        id="exampleDataList" placeholder="Elige una opción">
+                                                    <datalist id="datalistOptions">
+                                                        <option value="Entre 1 a 4">
+                                                        <option value="Entre 5 a 10">
+                                                        <option value="Santo Domingo, Bs. As.">
+                                                        <option value="Bs. As.">
+                                                        <option value="Bs. As.">
+                                                    </datalist>
+                                                </div>
+                                            </div>
+
+                                            <!--Top end-->
+
+
+                                            <!--Departure-->
+                                            <div>
+                                                <label for="" class="form-label mb-0 text-white fs-8">Entrada</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+
+
+                                            <!--Departure end-->
+
+                                            <!--Return-->
+                                            <div>
+                                                <label for="" class="form-label mb-0 text-white fs-8">Salida</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+
+                                            <!--Return end-->
+
+                                            <!--Cabin class-->
+                                            <div>
+                                                <label for="" class="form-label mb-0 text-white fs-8 "
+                                                    style="margin: 20px 0;">Tipo
+                                                    de evento:
+                                                </label>
+                                                <select name="form-select" aria-label="Default select example" id="">
+                                                    <option selected> Festejo</option>
+                                                    <option value="1">Ocio</option>
+                                                    <!--<option value="2">De 10 a 15</option>
+                        <option value="3">De 15 a 20</option>-->
+
+                                                </select>
+
+                                            </div>
+                                            <!--Cabin  class end-->
+
+
+
+                                            <!--Input Fields end-->
+
+                                            <!--Check Buttons-->
+                                            <div class="d-flex aling items-center justify-content-between pt-2">
+                                                <div class="d-flex flex-column">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label fs-8 text-white"
+                                                            for="flexCheckDefault">
+                                                            Add service Alquiler
+                                                        </label>
+                                                    </div>
+                                                    <!--<div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                checked>
+                            <label class="form-check-label fs-8 text-white " for="flexCheckChecked">
+                                Non-stop flight only
+                            </label>
+                        </div>-->
+                                                </div>
+                                                <div class="btn btn-green  fs-6 fw-bold text-white">Enviar &#8594;</div>
+                                            </div>
+
+                                            <!--Check Buttons end-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Check-->
+                                <!--Alquileres similares-->
+                                <!--<div class="contenedor_add_card">
+                        <div class="contenedor_cantidad">
+                            <input type="number" name="" id="" placeholder="1" value="1" min="1"
+                                class="input_cantidad" />
+                            <i class="fa-solid fa-chevron-up"></i>
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                            <div class="btn-incrementar-decrementar">
+                            </div>
+                        </div>
+                        <button class="btn-add-to-cart">
+                            <i class="fa-solid fa-plus"></i>
+                            Añadir al carrito
+                        </button>
+                    </div>-->
+
+                        </div>
+
+    </section>
+
+
+
+
+    <!--<div class="galeria__item">
+            <img src="./imagen/casa2.jpg" alt="" class="galeria__img">
+            <h2 class="galeria__titulo">Imagen 5</h2>
+        </div>
+        <div class="galeria__item">
+            <img src="./imagen/casa1.jpg" alt="" class="galeria__img">
+            <h2 class="galeria__titulo">Imagen 6</h2>
+        </div>
+        <div class="galeria__item">
+            <img src="./imagen/casa1.jpg" alt="" class="galeria__img">
+            <h2 class="galeria__titulo">Imagen 7</h2>
+        </div>
+        <div class="galeria__item">
+            <img src="./imagen/casa3.jpg" alt="" class="galeria__img">
+            <h2 class="galeria__titulo">Imagen 8</h2>
+        </div>
+        <div class="galeria__item">
+            <img src="./imagen/casa4.jpg" alt="" class="galeria__img">
+            <h2 class="galeria__titulo">Imagen 9</h2>
+        </div>-->
+    </div>
+
+
+
+
+    <!--Galeria-->
+    <main id="pantalla-dividida">    
+
+     <div id="contenedor" class="contenedor"> </div>
+    </main>
+    <div id="contenedor" class="contenedor"> </div>
+    
+    <div id="contenedorCompra" style="background: #b6b6b6;">
+        <div class="informacionCompra" id="informacionCompra">
+            <h2 style=" text-align: center; color: #fff;">Opiniones</h2>
+            <p class="x" id="x">x</p>
+        </div>
+
+        <!--<div class="productosCompra" id="productosCompra"></div>
+        <div class="total" id="total"></div>
+        <button>Opinión final</button>
+    </div>-->
+    <div class="grid"  id="productosCompra" >
+        <div id="opinion" class="items" style="font-size: 20px;border-bottom: 1px solid #e4e4e4; width:100%;">
+          <img src="./imagen/1.png" alt="">
+          <div class="info">
+            <h3>Quincho para eventos</h3>
+            <p>Extras: garage, patio, pscina</p>
+            <div class="precio">
+              <p>$60.000</p>
+              <p>$100.000</p>
+            </div>                    
+            <!--<button>Agregar al carrito</button>-->
+          </div>
+        </div>
+        <hr>
+        <div class="caracteristica_texto">
+            <h3 style="color: #e4e4e4;">Estas calificando a:</h3>
+            <p style="color: #e4e4e4;">Quincho: Las rosas</p>
+            <p style="color: #e4e4e4;"> Calle la Pampa - Mar del Plata.</p>
+        </div> 
+    </div>
+              
+
+
+    <!--Alquileres similares-->
+    <seccion class="contenedor_relato_alquiler" id="similares">
+        <h2>Alquileres relacionados</h2>
+        <div class="card_lista_alquiler">
+            <div class="card">
+                <div class="card-img">
+                    <img src="./imagen/casa1.jpg" alt="">
+                </div>
+                <div class="info_card">
+                    <div class="texto_alquiler">
+                        <h3>Alquileres - Quincho</h3>
+                        <p class="categoria">Festejo - Fiesta</p>
+                    </div>
+                    <div class="precio">$200.000</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="./imagen/casa1.jpg" alt="">
+                </div>
+                <div class="info_card">
+                    <div class="texto_alquiler">
+                        <h3>Alquileres - Quincho</h3>
+                        <p class="categoria">Festejo - Fiesta</p>
+                    </div>
+                    <div class="precio">$200.000</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="./imagen/casa1.jpg" alt="">
+                </div>
+                <div class="info_card">
+                    <div class="texto_alquiler">
+                        <h3>Alquileres - Quincho</h3>
+                        <p class="categoria">Festejo - Fiesta</p>
+                    </div>
+                    <div class="precio">$200.000</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="./imagen/casa1.jpg" alt="">
+                </div>
+                <div class="info_card">
+                    <div class="texto_alquiler">
+                        <h3>Alquileres - Quincho</h3>
+                        <p class="categoria">Festejo - Fiesta</p>
+                    </div>
+                    <div class="precio">$200.000</div>
+                </div>
+            </div>
+        </div>
+    </seccion>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://kitfontawesomo.com" crossorigin="anonymous"></script>
+
+
+    <script src="https://kit.fontawesome.com/a90f1b68c4.js" crossorigin="anonymous"></script>
+    <script src="js/detalle.js"></script>
+    <script src="./js/meGusta.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -1,191 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;700&display=swap");
 *{
-    margin:0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+   
 }
-
-html{
-    font-size: 62.5%;
-}
-
-.container{
-    background-color: #ebebeb;
-    background-image: url("../imagen/textura.png");
-}
-
-.container nav{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding: 15px;
-    background-color: #f3f3f3;
-    margin-bottom: 30px;
-    color: rgb#333;
-}
-
-.nav-card{
-    display: none;
-}
-
-.container nav button{
-display: none;
-}
-
-.nav-card li{
-    list-style: none;
-    padding: 1rem;
-    font-weight: bold;
-}
-
-.container nav i:hover > .buy-card{
-width: 400px;
-height: 400px;
-position: absolute;
-right: 0;
-background: #fff;
-
-}
-.container nav i:hover .nav-card{
-font-size: 1.5rem;
-display: flex;
-justify-content: space-between;
-margin: 0 10px 0 10px;
-border-bottom: solid thin #e1e1e1;
-
-}
-
-.container nav i:hover .buy-card > button{
-    display: block;
-    width: 90%;
-    padding: 1rem;
-    margin: 10px auto;
-    background-color:  transparent;
-    border: solid thin #e1e1e1;
-    color: #494848;
-    cursor: pointer;
-}
-
-.container nav i:hover .buy-card > button:hover{
-    border: solid thin #494848;
-    transition: all .4;
-}
-
-.container nav i {
-    font-size: 3rem;
-    cursor: pointer;
-}
-
 h1{
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 3rem;  
-    color: #63a2bd;   
-    font-size: 70px;
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
 }
-
-.grid{
-    display: grid;
-    max-width: 1100px;
-    justify-content: center;
-    margin: auto;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 280px));/*Esto es para no alterar el tamaño de las cardes*/
-    padding-bottom: 50px;
-}
-
-.items{
-   background-color: #fff;
-   border: solid thin #e1e1e1;
-   border-radius: 8px;   
-}
-
-.items img{
-    width: 100%;
-    height: 170px;
-}
-
-.info{
-    padding: 15px;
-}
-
-.info h3{
-    font-size: 1.6rem;
-}
-
-.info p{
-    font-size: 1.8rem;
-}
-
-
-.precio p:first-child{
-    text-decoration: line-through;    
-}
-
-.precio{
-    display: flex;
-    justify-content: space-between;
-    font-weight: bolder;
-}
-
-.precio p{
-    font-size: 1.8rem;
-}
-
-.info h3,
-.info p{
-    color: #000000;
-    margin-bottom: 15px;
-}
-
-.info button{
-    color: #f3f3f3;
-    padding: 1rem;
-    width: 100%;
+body{
     background-color: #000000;
-    border: none;
-    outline: #fff;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    border-radius: 10px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imagen/textura1.png") ;
+    
+}
+h1::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: black;
+    top: 50%;
+    z-index: -1;
+}
+
+.division{
+float: initial;
+}
+
+/*h1 span{
+  font-family: "Lora" sans-serif;
+  font-size: 70px;
+    color: #fa9e69;
+    padding: 0 15px;
+}*/
+
+.img-gallery{
+    width: 80%;
+    margin: 50px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 30px;
+}
+.img-gallery img{
+    width: 100%;
     cursor: pointer;
-    margin-bottom: 5px;
+    transition: 1s;
 }
+.img-gallery img:hover{
+    transform: scale(1.2);
+}
+.ful-img{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0,0, 0.9);
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
 
-.info button:hover{
-    background-color: #c34b2dc0;
-    transition: all .3;
 }
-
-/*Acomodar los elementos del carrito de compras*/
-.lista_de_cursos{
-  display: none;
-  text-align: center;
-  padding: 10px 0 0 0;
-  border-top: solid thin gray;
+.ful-img span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
 }
-
-.container nav i:hover .buy-card > .lista_de_cursos{
-  display: flex;
+.ful-img img{
+    width: 90%;
+    max-width: 600px;
 }
-
-.lista_de_cursos{
-  width: 100px;
-}
-
-.lista_de_cursos p{
-  width: 300px;
-  font-size: 1.1rem;
-}
-
-.lista_de_cursos p:nth-child(4){
-  padding-left: 40px;
-}
-.lista_de_cursos p:last-child span{
-  background-color: #c34b2dc0;
-  border-radius: 50%;
-  padding: 5px 10px;
-  color: #f3f3f3;
+@media screen and (max-width:400px){
+    h1{
+        text-decoration: underline;
+    }
+    h1::before{
+        display: none;
+    }
+    h1 span{
+        padding: 0;
+    }
 }
 
 /*MENU NAV*/
@@ -200,7 +103,7 @@ h1{
       "nav"
       "content";   
     width: 100%;
-    
+    margin-top: 0px;
     position: fixed;
   z-index: 999;
   }
@@ -259,7 +162,7 @@ h1{
   }
   
   @media (max-width: 700px) {
-
+  
     .navbar{
       background-color: #94999c;
     }
@@ -390,50 +293,4 @@ h1{
   .dropBtn2 i {
     margin-left: 15px;
   }
-
-  .color{
-    width: 100%;
-    height: 50%;
-    background: #63a2bd;
-  }
-
-  /*Buscadorrrrrrrrrrrrrr*/
-
-form {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.barra-busqueda {
-  width: 70%;
-  height: 40px;
-  line-height: 40px;
-  background: #fff;
-  padding: 0 20px;
-  border-radius: 100px;
-  border: none;
-  text-align: center;
-  font-size: 16px;
-}
-
-.categorias {
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.categorias a {
-  color: #9b9b9b;
-  margin: 10px 20px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.categorias a.activo {
-  color: #000;
-}
-
-
+  

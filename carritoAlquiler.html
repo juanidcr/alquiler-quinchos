@@ -38,14 +38,17 @@
               </a>                  
                <div class="drop-content">
                 <a href="registroPropietario.html">Propietario</a>-->
+          <a href="propietario.html">Perfil</a>
           <a href="home.html">Inicio</a>
         </div>
       </div>
     </div>
     </div>
   </header>
+
+
   <div class="color">
-    <h1>Alquiler de quinchos</h1>
+    <h1 class="titulo_color">Alquiler de quinchos</h1>
     <div class="grid">
       <div class="items">
         <img src="./imagen/casa1.jpg" alt="">
@@ -56,7 +59,7 @@
             <p>$60.000</p>
             <p>$100.000</p>
           </div>
-          <button>Agregar al carrito</button>
+         <a href="reservaAlquiler.html"><button>Leer más</button></a>
         </div>
       </div>
       <div class="items">
@@ -68,7 +71,7 @@
             <p>$60.000</p>
             <p>$100.000</p>
           </div>
-          <button>Agregar al carrito</button>
+          <button>Leer más</button>
         </div>
       </div>
       <div class="items">
@@ -80,15 +83,13 @@
             <p>$60.000</p>
             <p>$100.000</p>
           </div>
-          <button>Agregar al carrito</button>
+          <button>Leer más</button>
         </div>
       </div>
-
-
     </div>
 
     <div class="container">
-      <nav>
+      <nav id="carrito">
         <i class="fa-solid fa-cart-shopping">
           <div class="buy-card">
             <ul class="nav-card">
@@ -97,13 +98,44 @@
               <li>Precio</li>
               <li>Servicios</li>
               <li>Cantidad</li>
+              <li></li>
             </ul>
-            <button>VACIAR CARRITO</button>
+            <div class="lista_de_cursos">
+              <img src="./imagen/3.png" alt="" width="80%">
+              <p>Quincho</p>
+              <p>$87.000</p>
+              <p>1</p>
+              <p><sanp>x</sanp></p>
+            </div>
+            <button id="vaciar_carrito">VACIAR CARRITO</button>
           </div>
         </i>
       </nav>
+
       <h1>Alquiler de quinchos</h1>
-      <div class="grid">
+      
+      
+      <form action="">
+        <input
+          type="text"
+          class="barra-busqueda"
+          id="barra-busqueda"
+          placeholder="Buscar"
+        />
+      </form>
+      <div class="categorias" id="categorias">
+        <a href="#" class="activo">Todos</a>
+        <a href="#1" >Chalet</a>
+        <a href="#">Quincho</a>
+        <a href="#quinta">Quinta</a>
+        <a href="#evento" >Evento</a>
+        <a href="#fiesta">Fiesta</a>
+        <a href="#ocio">Ocio</a>        
+      </div>
+
+
+      
+      <div class="grid" id="lista-cursos">
         <div class="items">
           <img src="./imagen/casa1.jpg" alt="">
           <div class="info">
@@ -111,9 +143,9 @@
             <p>Extras: garage, patio, pscina</p>
             <div class="precio">
               <p>$60.000</p>
-              <p>$100.000</p>
+              <p class="descuento">$100.000</p>
             </div>
-            <button>Agregar al carrito</button>
+            <button class="agregar-carrito" data-id="1">Leer más</button>
           </div>
         </div>
 
@@ -124,9 +156,9 @@
             <p>Extras: garage, patio, pscina</p>
             <div class="precio">
               <p>$60.000</p>
-              <p>$100.000</p>
+              <p class="descuento">$100.000</p>
             </div>
-            <button>Agregar al carrito</button>
+            <button class="agregar-carrito" data-id="2">Leer más</button>
           </div>
         </div>
 
@@ -137,9 +169,9 @@
             <p>Extras: garage, patio, pscina</p>
             <div class="precio">
               <p>$60.000</p>
-              <p>$100.000</p>
+              <p class="descuento">$100.000</p>
             </div>
-            <button>Agregar al carrito</button>
+            <button class="agregar-carrito" data-id="3">Leer más</button>
           </div>
         </div>
 
@@ -150,9 +182,9 @@
             <p>Extras: garage, patio, pscina</p>
             <div class="precio">
               <p>$60.000</p>
-              <p>$100.000</p>
+              <p class="descuento">$100.000</p>
             </div>
-            <button>Agregar al carrito</button>
+            <button class="agregar-carrito" data-id="4">Leer más</button>
           </div>
         </div>
 
@@ -163,9 +195,9 @@
             <p>Extras: garage, patio, pscina</p>
             <div class="precio">
               <p>$60.000</p>
-              <p>$100.000</p>
+              <p class="descuento">$100.000</p>
             </div>
-            <button>Agregar al carrito</button>
+            <button class="agregar-carrito" data-id="5">Leer más</button>
           </div>
         </div>
 
@@ -176,17 +208,15 @@
             <p>Extras: garage, patio, pscina</p>
             <div class="precio">
               <p>$60.000</p>
-              <p>$100.000</p>
+              <p class="descuento">$100.000</p>
             </div>
-            <button>Agregar al carrito</button>
+            <button class="agregar-carrito" data-id="6">Leer más</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
+  <script src="./js/carrito.js"></script>
 </body>
 
 </html>
