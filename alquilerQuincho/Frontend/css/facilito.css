@@ -1,0 +1,22 @@
+* {
+     margin: 0;
+     box-sizing: border-box;
+}
+
+.card {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 80px;
+    background-color: slateblue;
+    color: #fff;
+    padding: 40px 20px;
+
+}
+
+.img {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
