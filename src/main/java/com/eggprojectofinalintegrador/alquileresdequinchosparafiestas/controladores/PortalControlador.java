@@ -34,9 +34,18 @@ public class PortalControlador {
     @GetMapping("/")
     public String index(ModelMap modelo){
                         
-        //return "index.html";
-        return "home.html";
+        return "index.html";        
         
+    }
+
+    @GetMapping("/galeriaAlquiler")
+    public String inicioGaleria(ModelMap modelo){
+        return "galeriaAlquiler.html";
+    }
+
+    @GetMapping("/carritoAlquiler")
+    public String inicioApp(ModelMap modelo){
+        return "carritoAlquiler.html";
     }
 
     @GetMapping("/registrarPropietario")
@@ -53,8 +62,7 @@ public class PortalControlador {
             usuarioServicio.registrarPropietario(archivo, apellido, nombre, dni, email, telefono, descripcion, password, passwordR);
             modelo.put("exito","Usuario registrado correctamente");
             
-            //return "index.html";
-            return "home.html";
+            return "index.html";
             
         } catch (MiException ex) {
             modelo.put("error", ex.getMessage());
@@ -99,9 +107,9 @@ public class PortalControlador {
 
             return "redirect:/adminPropietario/dashboard";
 
+        }else{
+            return "galeriaAlquiler.html";
         }
-        
-        return "inicio.html";
         
     }     
 
