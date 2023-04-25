@@ -157,37 +157,6 @@ h1{
     transition: all .3;
 }
 
-/*Acomodar los elementos del carrito de compras*/
-.lista_de_cursos{
-  display: none;
-  text-align: center;
-  padding: 10px 0 0 0;
-  border-top: solid thin gray;
-}
-
-.container nav i:hover .buy-card > .lista_de_cursos{
-  display: flex;
-}
-
-.lista_de_cursos{
-  width: 100px;
-}
-
-.lista_de_cursos p{
-  width: 300px;
-  font-size: 1.1rem;
-}
-
-.lista_de_cursos p:nth-child(4){
-  padding-left: 40px;
-}
-.lista_de_cursos p:last-child span{
-  background-color: #c34b2dc0;
-  border-radius: 50%;
-  padding: 5px 10px;
-  color: #f3f3f3;
-}
-
 /*MENU NAV*/
  
 .hero {
@@ -396,44 +365,5 @@ h1{
     height: 50%;
     background: #63a2bd;
   }
-
-  /*Buscadorrrrrrrrrrrrrr*/
-
-form {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.barra-busqueda {
-  width: 70%;
-  height: 40px;
-  line-height: 40px;
-  background: #fff;
-  padding: 0 20px;
-  border-radius: 100px;
-  border: none;
-  text-align: center;
-  font-size: 16px;
-}
-
-.categorias {
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.categorias a {
-  color: #9b9b9b;
-  margin: 10px 20px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.categorias a.activo {
-  color: #000;
-}
 
 

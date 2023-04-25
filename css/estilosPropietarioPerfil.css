@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #5f5f5f;   
+    background-image: url(../img/textura5.png);
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 30px 0px;
+}
+
+img {
+    width: 320px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    height: 70px;
+    width: 100%;
+}
+
+.image{
+    width: 10px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 50px auto 45px auto;
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contenedor>div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #000000;
+    height: 400px;
+    width: 400px;
+    border-radius: 20px;
+    flex-direction: column;
+    padding-top: 35px;
+    gap: 25px;
+    flex: 1 1 300px;
+}
+
+.contenedor>div>form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contenedor>div>form>input,
+select {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    color: black;
+}
+option{
+    color: black;
+}
+
+.contenedor .button {
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    color: black;
+}
+
+.contenedorProductos h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.mostrarProductos {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+}
+
+.mostrarProductos>div {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: #000000;
+    border-radius: 20px;
+}
+
+.informacion {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.informacion>p:first-child {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.informacion .precio {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.contenedorMensaje {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    height: 70px;
+}
+
+.repetidoError,
+.realizado,
+.llenarCampos,
+.noExsiteError {
+    margin: 15px 0px;
+}
+
+.llenarCampos::after,
+.noExsiteError::after,
+.repetidoError::after,
+.realizado::after {
+    background-color: red;
+    font-size: 17px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.realizado::after {
+    content: 'Realizado';
+    background-color: green;
+}
+
+.repetidoError::after {
+    content: 'Este elemento ya existe';
+}
+
+.llenarCampos::after {
+    content: 'Por favor compruebe que todos los campos estan llenos';
+}
+
+.noExsiteError::after {
+    content: 'Este elemento no existe';
+}
+
+
+/*MENU NAV*/  
+    .hero {
+        /* margin: 0; */
+        background: rgba(0, 0, 0, 0.575);
+        color: #fff;
+        /* display: grid; */
+        grid-template-rows: max-content 1fr;
+        grid-template-areas:
+            "nav"
+            "content";
+        width: 100%;
+        position: fixed;
+        z-index: 999;
+    }
+
+  
+  .nav__logo {
+  
+    font-size: 2rem;
+    font-weight: 300px;
+    font-family: "Lora", sans-serif;
+  }
+  
+  .navbar {    
+    grid-area: nav;
+    display: grid;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    gap: 1em;
+    align-items: center;
+    padding: 5px 30px;
+    
+  }
+  
+  .navbar .nav-header {
+    margin: auto;
+    display: inline;
+  }
+  .navbar .nav-header .nav-logo {
+    display: inline-block;
+    margin-top: -7px;
+  }
+  .navbar .nav-links {
+    display: inline;
+    float: right;
+    font-size: 5px;
+  }
+  
+  /*Tipografia menu*/
+  .navbar .nav-links a {
+    font-family: "Lato", sans-serif;
+    padding: 20px 12px;
+    text-decoration: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  /* Hover effects */
+  .navbar .nav-links a:hover {
+    background-color: #fa9e69;
+    border-radius: 6px;
+  }
+  
+  /* responsive navbar toggle button */
+  .navbar #nav-check,
+  .navbar .nav-btn {
+    display: none;
+  }
+  
+  @media (max-width: 700px) {
+
+    .navbar{
+      background-color: #94999c;
+    }
+    .nav__logo{
+      z-index: 2000;
+    }
+    .navbar #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 70px);
+      overflow-y: auto;
+      
+    }
+    .navbar .nav-btn {
+      display: inline-block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      
+    }
+    /*Icono Hamburguesa*/
+    .navbar .nav-btn label {
+      display: inline-block;  
+      width: 80px;
+      height: 70px;
+      padding: 25px;
+    }
+  
+    /*Color lineas hamburguesa*/
+   
+    .navbar .nav-btn label:hover,
+    .navbar #nav-check:checked ~ .nav-btn label {
+      transition: all 0.5s ease;
+    }
+    /* Color fondo Menu Hamburguesa*/
+    .navbar .nav-links {
+      position: absolute;
+      display: block;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      background-color: #94999c;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 70px;
+      right: 0px;
+      border-radius: 6px;
+    }
+    .navbar .nav-links a {
+      display: block;
+    }
+  
+    /* when nav toggle button not checked */
+    .navbar #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+  
+    /* when nav toggle button is checked */
+    .navbar #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 70px);
+      overflow-y: auto;
+    }
+  
+    .navbar .nav-links .loginBtn {
+      padding: 10px 40px;
+      margin: 20px;
+      font-size: 14px;
+      font-family: "Urbanist", sans-serif;
+      color: rgb(255, 255, 255);
+    }
+    /* Responsive dropdown code */
+    .navbar .nav-links .dropdown,
+    .navbar .nav-links .dropdown2 {
+      float: none;
+      width: 100%;
+    }
+    .navbar .nav-links .drop-content,
+    .navbar .nav-links .drop-content2 {
+      position: relative;
+      background-color: #858b8f;
+      top: 0px;
+      left: 0px;
+    }
+    /* Text color sub menu Hamburguesa */
+    .navbar .nav-links .drop-content a {
+      color: rgb(255, 255, 255);
+    }
+  }
+  
+  /* Dropdown menu CSS code */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .drop-content,
+  .drop-content2 {
+    display: none;
+    position: absolute;
+    background-color: #9ea3a7;
+    border-radius: 6px;
+    min-width: 120px;
+    font-size: 16px;
+    font-family: "Urbanist", sans-serif;
+    top: 34px;
+  }
+  /* on hover show dropdown */
+  .dropdown:hover .drop-content,
+  .dropdown2:hover .drop-content2 {
+    display: block;
+  }
+  /* Color lineas links */
+  .drop-content a {
+    padding: 12px 10px;
+    border-bottom: 1px solid #757c81;
+    display: block;
+    transition: all 0.5s ease !important;
+  }
+  .dropBtn .drop-content a:hover {
+    background-color: rgb(250, 158, 102) ;
+  }
+  .dropdown:hover .dropBtn,
+  .dropdown2:hover .dropBtn2 {
+    background-color: rgb(250, 158, 102) ;
+  }
+  .dropdown2 .drop-content2 {
+    position: absolute;
+    left: 120px;
+    top: 126px;
+  }
+  .dropBtn2 i {
+    margin-left: 15px;
+  }
+
+  /*Perfil */
+  .titulo h1 {
+    text-align: center;
+    color: #ff6529; 
+    margin-top: 20%;   
+    font-size: 100px;
+    font-family: 'Lora', serif;
+  }
+  
+ 
+  /*Pantalla dividida*/
+  .izquierda {   
+    background: #3157ad;
+    opacity: 1;
+    background-image: url("../imagen/textura1.png");
+    background-repeat: no-repeat;
+   
+    width: 50%;
+    margin: auto;
+    
+  }
+  
+  .derecha {  
+    background: #ffffff;
+    background-repeat: no-repeat;
+    margin-top: 0%;
+   
+    width: 50%;
+  }
+  
+  #pantalla-dividida {
+    padding: 100px;  
+    display: flex;
+    background: #ffffff;
+  }
+  
+
+  .pantalla_izquierda{
+    background-repeat: no-repeat;
+    width: 20%;
+    padding: 30px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 150px;
+    background: black;
+    border-radius: 20px;
+    margin: auto;
+  }
+
+  /*Perfil*/
+  .grid{
+    display: block;
+    max-width: 1100px;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 280px));/*Esto es para no alterar el tamaño de las cardes*/
+    padding-bottom: 50px;
+    
+}
+
+.items{
+   background-color: #fff;
+   border: solid thin #e1e1e1;
+   border-radius: 8px;   
+}
+
+.items img{
+    width: 100%;
+    height: 170px;
+}
+
+.info{
+    padding: 15px;
+}
+
+.info h3{
+    font-size: 1.6rem;
+}
+
+.info p{
+    font-size: 1.8rem;
+}
+
+
+.precio p:first-child{
+    text-decoration: line-through;    
+}
+
+.precio{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+}
+
+.precio p{
+    font-size: 1.8rem;
+}
+
+.info h3,
+.info p{
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 20px;
+    display: contents;
+}
+
+.info button{
+    color: #f3f3f3;
+    padding: 1rem;
+    width: 100%;
+    background-color: #000000;
+    border: none;
+    outline: #fff;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.info button:hover{
+    background-color: #c34b2dc0;
+    transition: all .3;
+}

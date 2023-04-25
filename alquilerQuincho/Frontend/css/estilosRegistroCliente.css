@@ -9,7 +9,6 @@
   box-sizing: border-box;
 }
 
-/***Body***/
 body {
    margin: 0;
   background-repeat: no-repeat;
@@ -18,50 +17,15 @@ body {
 
 
 .titulo h1 {
-  text-align: center;
   color: #63a2bd; 
-  margin-top: 20%;   
+  margin-top: 20%; 
+ 
   font-size: 100px;
   font-family: 'Lora', serif;
-}
-
-span {
-    margin-top: 20%;  
-    font-size: 100px;
-    font-family: 'Lora', serif;
-    color:#63a2bd;
-}
-
-/*Pantalla dividida*/
-.izquierda {   
-    background:  #cecece;
-    opacity: 1;
-    background-image: url("../imagen/textura.png");
-    background-repeat: no-repeat;
-    height: 160vh;
-    width: 50%;
-    margin: auto;
-    
-  }
-  
-  .derecha {  
-    background: #dff4fd;
-    background-repeat: no-repeat;
-    margin-top: 0%;
-    height: 160vh;
-    width: 50%;
-  }
-
-#pantalla-dividida {  
-  display: flex;
-  background: #ede5da;
+  text-align: center;
 }
 
 
-
- 
- /*MENU NAV*/
- 
 .hero {
     
   background: rgba(0, 0, 0, 0.575);  
@@ -263,225 +227,30 @@ z-index: 999;
   margin-left: 15px;
 }
 
-/*Slider Imagenes home*/
-.container{
-  margin-top: 400px;
-  justify-content: center;
-}
-.slider-wrapper{
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
- }
-
- .slider{
-  display: flex;
-  aspect-ratio: 16 / 9;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  box-shadow: 0 .25rem .5rem #21212126;
- }
-
- .slider img{
-  width: 100%;
-  height: 100%;
-  flex: 1 0 100%;
-  scroll-snap-align: start;
-  object-fit: cover;
- }
-
- .slider-nav{
-  display: flex;
-  column-gap: 1rem;
-  position: absolute;
-  bottom: 1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 50;
- }
-
- .slider-nav a{
-  width: .5rem;
-  height: .5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: .75;
-  transition: opacity ease 250ms;
- }
-
- .slider-nav a:hover{
+/*Pantalla dividida*/
+.izquierda {   
+  background:  #cecece;
   opacity: 1;
- }
-
-/*.slider-frame{
-  width: 700px;
-  height: auto;
-  margin: 350px auto 0;
-  overflow: hidden;
-
-  animation:  slide 16s infinite alternate ease-in-out;
-}
-
-.slider-frame ul{
-  display: flex;
-  padding: 0;
-  width: 400%;
-}
-
-.slider-frame li{
-  width: 100%;
-  list-style: none;
+  background-image: url("../imagen/textura.png");
+  background-repeat: no-repeat;
+  height: 160vh;
+  width: 50%;
+  margin: auto;
   
 }
 
-.slider-frame img{
-  width: 100%;
+.derecha {  
+  background: #dff4fd;
+  background-repeat: no-repeat;
+  margin-top: 0%;
+  height: 160vh;
+  width: 50%;
 }
 
-@keyframes slide{
-  0% {margin-left: 0%;}
-  20% {margin-left: 0%;}
-
-  25% {margin-left: -100%;}
-  45% {margin-left: -100%;}
-
-  50% {margin-left: -200%;}
-  70% {margin-left: -200%;}
-
-  75% {margin-left: -300%;}
-  95% {margin-left: -300%;}
-}
-
-/*body{
+#pantalla-dividida {  
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
+  background: #fcf4ea;
 }
-
-img{
-  max-width: 100%;
-}
-
-.container-all{
-  position: relative;
-  max-width: 1000px;
-  width: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.slide{
-  display: flex;
-  transform: translate3d(0,0,0,);
-  transition: all 600ms;
-  animation-name: autoplay;
-  animation-duration:  6.5;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-}
-
-.item-slide{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  flex-grow: 0;
-  max-width: 100%;
-}
-
-.pagination{
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.pagination-item{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid white;
-  width: 16px;
-  height: 16px;
-  border-radius: 5px;
-  overflow: hidden;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.3);
-  margin: 0 10px;
-  text-align: center;
-  transition: all 300ms;
-}
-
-.pagination-item:hover{
-  transform: scale(2);
-}
-
-.pagination-item img{
-  display: inline-block;
-  max-width: none;
-  height: 100%;
-  transform: scale(1);
-  opacity: 0;
-  transform: all 300ms;
-}
-
-.pagination-item:hover img{
-  opacity: 1;
-  transform: scale(1);
-}
-
-input[id="1"]:checked ~ .slide{
-  animation: none;
-  transform: translate3d(0, 0, 0);
-
-}
-
-input[id="1"]:checked ~ .pagination .pagination-item[form="1"]{
-  background: #fff;
-}
-
-input[id="2"]:checked ~ .slide{
-  animation: none;
-  transform: translate3d(calc(-100% *1)0, 0, 0);
-
-}
-
-input[id="2"]:checked ~ .pagination .pagination-item[form="2"]{
-  background: #fff;
-}
-
-
-input[id="3"]:checked ~ .slide{
-  animation: none;
-  transform: translate3d(calc(-100% *2)0, 0, 0);
-
-}
-
-input[id="3"]:checked ~ .pagination .pagination-item[form="3"]{
-  background: #fff;
-}
-
-@keyframes autoplay{
-  33%{
-    transform: translate(calc(-100% *0)0, 0 ,0);
-  }
-
-  66%{
-    transform: translate(calc(-100% *1)0, 0 ,0);
-  }
-
-  100%{
-    transform: translate(calc(-100% *2)0, 0 ,0);
-  }
-
-}*/
-
-
 
 
 
@@ -494,8 +263,8 @@ input[id="3"]:checked ~ .pagination .pagination-item[form="3"]{
   padding-top: 40px;
 }
 .formulario {
-    
   font-family: 'Lora', serif;
+ 
   background: rgba(255, 255, 255, 0.5) ;
   margin-top: 150px;
   padding: 3px;
@@ -524,8 +293,7 @@ textarea {
   border-color: #fff;
 }
 
-.input-contenedor {
-  margin-bottom: 15px;
+.input-contenedor { 
   border-radius: 12px;
   border: 1px solid #aaa;
 }
@@ -569,7 +337,8 @@ p {
 }
 
 .file-select::before {
-  background-color: #3a96f1;
+  width: 90%;
+  background-color: #636466;
   color: white;
   display: flex;
   justify-content: center;
@@ -593,7 +362,7 @@ p {
 
 #src-file1::before {
   border-radius: 12px;
-  content: "Subir tu cv";
+  content: "Subir foto.";
 }
 
 @media (min-width: 768px) {
@@ -670,4 +439,71 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
   margin-top: 3px;
 }
 
+/*Formularios*/
+
+.contenedor__login-register {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  top: -185px;
+  left: 10px;
+  text-align: center;
+
+  /*La transicion va despues del codigo JS*/
+  transition: left 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contenedor__login-register form {
+  width: 100%;
+  padding: 80px 20px;
+  background: white;
+  position: absolute;
+  border-radius: 20px;
+}
+
+.contenedor__login-register form h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #46a2fd;
+}
+
+.contenedor__login-register form input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background: #f2f2f2;
+  font-size: 16px;
+  outline: none;
+}
+
+.contenedor__login-register form button {
+  padding: 10px 40px;
+  margin-top: 40px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  background: #46a2fd;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  justify-content: center;
+}
+
+.formulario__login {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+  color: #000;
+  outline: none;
+  padding: 10px 0;
+}
+.formulario__register {
+  display: none;
+}
 

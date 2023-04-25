@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="./css/estilosGaleria.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="navbar">
+          <div>
+            <h2 class="nav__logo"><img src="imagen/logo.png" class="image" width="30%" height="30%" /></h2>
+          </div>
+          <div class="nav-links">
+    
+            <div class="nav-header">
+    
+              <a href="carritoAlquiler.html">Alquileres</a>
+             
+              <a href="home.html">Inicio</a>
+              <a href="#">Perfil</a>
+            </div>
+          </div>
+        </div>
+        </div>
+    </header>
+    <br><br><br> <br> <br>
+    <h1><span>Galeria de imagenes</span></h1>
+
+      <main class="division">
+          <div class="ful-img" id="fulImgBox">
+            <img src="imgs/1.jpg" id="fulImg" alt="">
+            <span onclick="closeImg()">X</span>
+          </div>
+    
+       
+    
+        <div class="img-gallery">
+            <img src=" ./imagen/casa1.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="./imagen/casa2.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="./imagen/casa3.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="./imagen/casa4.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="./imagen/casa4.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="./imagen/casa2.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="./imagen/casa1.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="./imagen/casa3.jpg" onclick="openFulImg(this.src)" alt="">
+        </div>
+      </main>
+    
+    <script src="./js/galeria.js"></script>
+</body>
+</html>

@@ -19,7 +19,7 @@ body {
 
 .titulo h1 {
   text-align: center;
-  color: #63a2bd; 
+  color: #ff6529; 
   margin-top: 20%;   
   font-size: 100px;
   font-family: 'Lora', serif;
@@ -29,14 +29,14 @@ span {
     margin-top: 20%;  
     font-size: 100px;
     font-family: 'Lora', serif;
-    color:#63a2bd;
+    color:#ff6529;
 }
 
 /*Pantalla dividida*/
 .izquierda {   
     background:  #cecece;
     opacity: 1;
-    background-image: url("../imagen/textura.png");
+    background-image: url("../imagen/textura1.png");
     background-repeat: no-repeat;
     height: 160vh;
     width: 50%;
@@ -59,6 +59,7 @@ span {
 
 
 
+ /*MENU NAV*/
  
  /*MENU NAV*/
  
