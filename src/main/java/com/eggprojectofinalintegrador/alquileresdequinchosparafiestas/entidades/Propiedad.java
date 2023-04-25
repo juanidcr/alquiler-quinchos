@@ -23,5 +23,5 @@ public class Propiedad {
     private double precioAlquiler;
 private UserPropietario propietario;
 private List<Imagen> vistas;
-private String valor;
+
 }
