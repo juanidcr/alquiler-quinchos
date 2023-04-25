@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+
+    <link rel="stylesheet" href="estiloPropietarioPerfil.css">
+
+
+
+<body>
+    <header class="hero">
+        <div class="navbar"  id="header">
+
+             <!--<h2 class="nav__logo"><img src="imagen/logo.png" class="image" width="30%" height="30%" /></h2>-->
+
+            <div class="nav-links">
+
+                <div class="nav-header">                   
+                    <a href="./../alquileres/alquileres.html">Alquileres</a>
+                    <a href="#crear">Creación</a>
+                    <a href="../../home.html">Inicio</a>                       
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <br> <br> <br> <br> 
+    <p style=" margin-top: -15px; color: #fff; background: #095fbbe0; font-family: 'Lora'; font-size: 40px; padding: 30px; text-align: center;">Propietario</p>
+    <section id="pantalla-dividida">      
+       
+        <div class="pantalla_izquierda">
+        
+            <div class="grid" >
+                <p id="estrellas" class="clasificacion">
+                    <input id="valorAñadir" type="radio" name="estrellas" value="5"><!--
+                        --><label for="radio1">★</label><!--
+                        --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                        --><label for="radio2">★</label><!--
+                        --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                        --><label for="radio3">★</label><!--
+                        --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                        --><label for="radio4">★</label><!--
+                        --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                        --><label for="radio5">★</label>
+                </p>
+                <h1 style="color: #ffffff; font-size: 25px;">Leos<span style="color:#dbfefd; font-size: 25px;"> Back - Front</span></h1>
+                <div class="items" style="text-align: center;border-bottom: 1px solid #e4e4e4; width:100%;">
+                  <img style="text-align: center;" src="../img/avatar.jpg" alt="">                       
+                </div>
+                <div class="descripcionPersonal">                                                               
+                    <h3> Descripción: </h3>
+                    <div class="completarCampo">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id et quis, nostrum voluptates quo similique dignissimos incidunt molestias consequatur quam fugit dolorem modi nam accusantium. Facilis quaerat amet tempore dignissimos.</p>
+                    </div>
+                  </div>                
+            </div>
+            <div class="caracteristica_texto">
+                <h3 style="text-align: center;">Redes Sociales <br> <br>
+                <i style="text-align: center; margin: auto; color: #dbfefd;" class="fa-solid fa-facebook-f"></i>
+                
+                <i style="text-align: center; margin: auto; color: #dbfefd;" class="fa-brands fa-instagram"></i>
+            </h3>
+             </div>
+                    
+        </div>             
+     
+         
+          
+      </section>
+      
+      <section id="menu">                
+        <div class="tile about-tile">           
+          <a href="#about" id="boton">
+            <div class="back">Crear Alquiler</div>
+            <div class="front"></div>
+          </a>
+        </div>
+        <div class="tile projects-tile">
+          <a href="#projects">
+            <div class="back">Calendario</div>
+            <div class="front"></div>
+          </a>
+        </div>
+        <div class="tile posts-tile">
+          <a href="#posts">
+            <div class="back">Reservas</div>
+            <div class="front"></div>
+          </a>
+        </div>
+        <div class="tile contact-tile">
+          <a href="./../alquileres/alquileres.html">
+            <div class="back">App</div>
+            <div class="front"></div>
+          </a>
+        </div>
+      </section>
+ 
+        
+
+
+<div class="tituloPerfil" id="crear">
+    <h1 id="about" style=" margin-top: -15px; color: #fff; background: #000000; font-family: 'Lora'; font-size: 40px; padding: 30px; text-align: center;">Crear Alquiler</h1>       
+</div>
+
+<main>
+    <div class="contenedor">
+        <!-- Añadir -->
+        <div class="añadir">
+            <h2>Añadir</h2>
+            <form>
+                <label>Titulo del alquiler Quincho</label>
+                <input type="text" id="productoAñadir" name="nombreDelProducto">
+
+                <label>Precio de alquiler</label>
+                <input type="number" id="valorAñadir">                 
+
+                <label>Servicio Extra</label>
+                <input type="text" id="servicioAñadir">
+
+                <label>Url Imagen</label>
+                <input type="text" id="ImagenAñadir">
+
+                <input class="button" type="button" id="botonAñadir" value="Añadir">
+            </form>
+        </div>
+        <!-- Editar -->
+        <div class="editar">
+            <h2>Editar</h2>
+            <form>
+                <label>Nombre del alquiler</label>
+                <select id="productoEditar">
+                    <option value="">---</option>
+                </select>
+
+                <label>Atributo</label>
+                <select id="atributoEditar">
+                    <option value="">---</option>
+                </select>
+
+                <label>Nuevo valor</label>
+                <input type="text" id="nuevoAtributo">
+
+                <input class="button" type="button" id="botonEditar" value="Editar">
+            </form>
+        </div>
+
+        <!-- Eliminar -->
+        <div class="eliminar">
+            <h2>Eliminar</h2>
+
+            <form>
+                <label>Nombre del alquiler</label>
+                <select id="productoEliminar">
+                    <option value="">---</option>
+                </select>
+                <input class="button" type="button" id="botonEliminar" value="Eliminar">
+            </form>
+        </div>
+    </div>
+   
+
+    <!-- Mostrar el mensaje -->
+    <div class="contenedorMensaje">
+        <div id="mensaje"></div>
+    </div>
+
+
+    
+
+    <!-- Alquileres -->
+    <div class="contenedorProductos" id="vista">
+        <h2 style="font-family: 'Lora'; text-align: center; font-size: 45px; color:#000000">Alquileres Creados</h2> <br><br><br> <!--Vista Cliente en realidad-->
+        <div class="mostrarProductos" id="mostrarProductos">
+            
+        </div>
+    </div>
+    </div>
+</main>
+    <script src="adminPropietario.js"></script>
+</body>
+
+</html>
