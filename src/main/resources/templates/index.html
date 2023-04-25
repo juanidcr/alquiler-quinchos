@@ -1,15 +1,106 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>INDEX</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>INDEX content</div>
-    </body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="/fragments/head :: head" </head>
+
+    <body class="textura">  
+
+        <!<!-- comment -->
+        <header class="hero">      
+                <div class="navbar">  
+                    <div><h2 class="nav__logo"><img th:src="@{../img/logo.png}" class="image"  width="30%" height="30%"/></h2></div>  
+                    <div class="nav-links">   
+                        <div class="nav-header">                         
+                            <a th:href="@{/carritoAlquiler}">Omitir  X</a>
+                        </div>
+                    </div>                
+                </div>
+            </div>      
+        </header>   
+    <div class="slider">
+        <ul>
+            <li>     
+                <div class="wrap">
+                    <div class="wrap-texto">
+                        <h1>Navega en la App</h1>
+                        <p> Regístrate o Inicia Sesión. </p>              
+                    </div>
+                </div>
+
+            </li>
+
+            <li>
+
+                <div id="wrap1" class="wrap">
+                    <div class="wrap-texto">
+                        <h1>Alquileres de quinchos.</h1>
+                        <p> disfruta con tus amigos. </p>              
+                    </div>            
+                </div> 
+
+            </li>
+
+            <li>
+
+                <div id="wrap2" class="wrap">
+                    <div class="wrap-texto">
+                        <h1>Celebra tus fiestas</h1>
+                        <p> Alquila un quincho. </p>              
+                    </div>            
+                </div> 
+
+            </li>
+
+            <li>         
+                <div id="wrap3" class="wrap">
+                    <div class="wrap-texto">
+                        <h1>¿Tienes un quincho?</h1>
+                        <p> Ponlo en alquiler. </p>              
+                    </div>
+                </div>
+
+            </li>
+
+        </ul>                  
+    </div>  
+
+
+
+</section>
+
+</section>
+
+<section id="pantalla-dividida"> 
+
+    <div class="der">
+        <a id="button1" href="registroCliente.html">Regístrate como Cliente.</a>    
+    </div>
+
+    <div class="medio">
+        <a id="button3" th:href="@{/login}">Iniciar Sesión</a>    
+    </div>
+
+    <div class="izq">
+        <a id="button2" class="button" th:href="@{/registrarPropietario}">Regístrate como Propietario.</a> 
+    </div>                              
+
+</section> 
+
+<footer class="pie-pagina" id="contacto">
+    <div class="grupo-1">          
+        <div class="box">
+            <h2>Contacto:</i></h2>
+            <div class="red-social">
+                <a target="_blank" href="https://www.facebook.com"><img  th:src="@{../img/facebook-f.svg}" alt="" width="50%"></i></a>
+                <a target="_blank" href="https://www.instagram.com"><img th:src="@{../img/instagram.svg}" alt=""  width="75%"></i></a>
+                <a target="_blank" href="https://www.linkedin.com"><img th:src="@{../img/linkedin-in.svg}" alt="" width="70%"></a>
+                <a target="_blank" href="https://www.twitter.com"><img th:src="@{../img/twitter.svg}" alt="" width="70%"></a>
+            </div>
+        </div>    
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2023 <b>Grupo 4 curso EGG</b> - Informacion legal | Politica de privacidad.</small>
+    </div>
+</footer>       
+
+</body>
 </html>

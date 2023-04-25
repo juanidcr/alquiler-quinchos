@@ -7,6 +7,7 @@ package com.eggprojectofinalintegrador.alquileresdequinchosparafiestas.Servicios
 import com.eggprojectofinalintegrador.alquileresdequinchosparafiestas.entidades.Imagen;
 import com.eggprojectofinalintegrador.alquileresdequinchosparafiestas.excepciones.MiException;
 import com.eggprojectofinalintegrador.alquileresdequinchosparafiestas.repositorios.ImagenRepositorio;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,28 +18,54 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @Service
 public class ImagenServicio {
+
     @Autowired
     private ImagenRepositorio imagenRepositorio;
 
-    public Imagen guardar(MultipartFile archivo) throws MiException{
-        if(archivo != null){
-            try{
-                Imagen imagen=new Imagen();
-                
+    public Imagen guardar(MultipartFile archivo) throws MiException {
+        if (archivo != null) {
+            try {
+                Imagen imagen = new Imagen();
+
                 imagen.setMime(archivo.getContentType());
                 imagen.setNombre(archivo.getName());
-                imagen.setContendido(archivo.getBytes()); 
+                imagen.setContendido(archivo.getBytes());
 
-                System.out.println("archivo no null");               
-                
+                System.out.println("archivo no null");
+
                 return imagenRepositorio.save(imagen);
-            }catch (Exception ex) {
-                System.err.println(">>"+ex.getMessage());
+            } catch (Exception ex) {
+                System.err.println(">>" + ex.getMessage());
             }
-        }else{
+        } else {
             System.out.println("archivo null");
         }
-        
+
+        return null;
+    }
+
+    public Imagen actualizar(MultipartFile archivo, String IdImagen) throws MiException {
+        if (archivo != null) {
+            try {
+                Imagen imagen = new Imagen();
+
+                if (imagen.getId() != null) {
+                    Optional<Imagen> respuesta = imagenRepositorio.findById(IdImagen);
+                    if (respuesta.isPresent()) {
+                        imagen = respuesta.get();
+                    }
+                }
+
+                imagen.setMime(archivo.getContentType());
+                imagen.setNombre(archivo.getName());
+                imagen.setContendido(archivo.getBytes());
+
+                return imagenRepositorio.save(imagen);
+            } catch (Exception ex) {
+                System.err.println(">>" + ex.getMessage());
+            }
+        }
+
         return null;
     }
 }
